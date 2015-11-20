@@ -258,6 +258,6 @@ BEGIN
               :NEW.emp_name,
               :NEW.emp_email,
               :NEW.emp_office,
-              :NEW.emp_phone;
+              :NEW.emp_phone);
 END;
 /
