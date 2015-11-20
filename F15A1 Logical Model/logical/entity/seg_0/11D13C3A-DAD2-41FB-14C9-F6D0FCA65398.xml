@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="11D13C3A-DAD2-41FB-14C9-F6D0FCA65398" name="F15A1_contact">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 22:36:32 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="contact_id" id="6D357123-7588-66CA-BAA8-611A8EB3EBCF">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 23:21:53 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_id" id="23899A1C-972B-9319-31BE-8E2C4EBC61E1">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 22:39:29 UTC</createdTime>
+<generatorID>6C0A4588-0604-6C36-0A2A-EC6FEFF36D53</generatorID>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>9826B455-3171-A723-0384-F3F15EE00B5E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rfe_id" id="C3CA3B35-35F3-632D-260E-18EE30CA2089">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 22:40:08 UTC</createdTime>
+<generatorID>94B88778-B58D-6800-0450-122E639BBCB7</generatorID>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>96ED1113-A95F-2697-0573-6F3A7FC26F18</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="contact_effective_date" id="A91F282F-BFF7-7EC2-4A3C-40C5CB3E0869">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 23:22:25 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="contact_comment" id="68A9E238-93FB-8900-1448-9AFED152EE5A">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 23:22:56 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="role_code_id" id="E630EF04-0F16-0DE7-2B83-B1B62C829686">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:26:02 UTC</createdTime>
+<generatorID>86478A5D-50F6-36BA-BBBC-A75F070A123B</generatorID>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>341EFE6C-B086-92BD-01CD-1578D99EB7B9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AA6839E9-8AEE-F23A-AAA6-37353DF52016" name="F15A1_rfe_to_emp PK">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 22:53:02 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6D357123-7588-66CA-BAA8-611A8EB3EBCF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

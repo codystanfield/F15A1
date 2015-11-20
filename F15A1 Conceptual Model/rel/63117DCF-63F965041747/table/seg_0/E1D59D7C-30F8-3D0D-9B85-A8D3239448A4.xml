@@ -1,0 +1,241 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E1D59D7C-30F8-3D0D-9B85-A8D3239448A4" name="F15A1_emp">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>F33E2467-7AAE-4BAC-D96E-2526522D0BE2</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="emp_id" id="377DEF59-4B90-54F9-D4DC-A491CA4467EE">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>9826B455-3171-A723-0384-F3F15EE00B5E</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15A1_Auth_auth_id" id="28548318-D352-2573-D011-AD9CDED536A6">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>6A0FD80D-76A5-7EF0-D679-831F55280155</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B12DEB5F-2450-3B5B-F1F0-907944B257FA" referredColumn="019F84DC-23D4-D901-FB2D-1F9D6EA77736"/>
+</associations>
+</Column>
+<Column name="F15A1_Lab_lab_id" id="7F9CCD8A-5212-EA76-532A-FCB8C73C0606">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>FC177F72-93FD-FC4B-672C-408D6F1165D1</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3AC97C42-E1F7-949D-7001-B8500377F599" referredColumn="A8FC4710-AF44-2AA4-465C-A7126B7D3FB2"/>
+</associations>
+</Column>
+<Column name="emp_name" id="6308B8BC-08D6-37A3-4A02-5D0D8DE185A4">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>CAFB493B-A212-F205-DCF9-CDD386C72548</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_email" id="379023BD-8D6C-3FD8-37A7-2CA26ACC162B">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>23F69B6D-87D2-F1DB-5DFE-3CF7DDDA0F12</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_office" id="49B6ECE9-4236-5898-7367-0F9D24E56FBA">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>506A3AA9-FF6D-1694-C94A-044E99EB76B5</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_phone" id="C2B47720-0487-4E9E-C674-EEF8F3CBB31B">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>25A700A1-A955-9207-2BDD-8D9F49B9A0C9</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_status" id="03AE98F5-0E5E-E302-7C1A-E4FF36F87379">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>550038C6-99FD-1FC8-971A-58AF2C2D6523</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_system_admin_flag" id="9DD83CC4-B395-2EC6-B359-1C3CFCAF0CBE">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>4E11B31A-6DB2-4B73-B139-4F33349B44B5</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_chairperson_flag" id="51A9A87D-814C-771F-A6FD-FD259ADE49A6">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>9DD7BFC1-DF08-33D4-A069-1E52AEECA934</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_admin_flag" id="94F4CF7F-D704-C643-8049-368F69829C80">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:08:36 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_labdir_flag" id="8D059E97-6305-6E1A-1072-B0AB70D3B64D">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:08:36 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_execdir_flag" id="4C85BC8F-070F-684A-BC93-E310F6967B0C">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:08:36 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_chair_flag" id="7BE45F40-0AF4-F64E-5A1B-4E339DE72B18">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:08:36 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DAEC1EBC-AD84-E838-5BC0-D16280B17B09" name="F15A1_emp_PK">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>9A8C4645-C2D3-8F94-92D1-1B86F16CB994</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="377DEF59-4B90-54F9-D4DC-A491CA4467EE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="04F53886-831A-6BBA-2E9C-B2C41CC867C2" name="F15A1_emp__IDX">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>CB06D391-C453-DED1-D930-7B729770DBC1</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="28548318-D352-2573-D011-AD9CDED536A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8F346BBB-153C-D0C2-2AF3-669E18D9652F" name="F15A1_emp_F15A1_Lab_FK">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:06:44 UTC</createdTime>
+<generatorID>E416C562-B7BB-78CF-3CFD-44091CED3320</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F9CCD8A-5212-EA76-532A-FCB8C73C0606"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5404727C-B005-F06D-89B8-60F3102E847E" name="F15A1_emp_F15A1_Auth_FK">
+<createdBy>brettcox</createdBy>
+<createdTime>2015-11-20 00:27:49 UTC</createdTime>
+<generatorID>CB06D391-C453-DED1-D930-7B729770DBC1</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="28548318-D352-2573-D011-AD9CDED536A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

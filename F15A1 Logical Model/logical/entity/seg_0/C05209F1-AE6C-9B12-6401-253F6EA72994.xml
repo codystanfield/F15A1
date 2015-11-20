@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C05209F1-AE6C-9B12-6401-253F6EA72994" name="F15A1_Hist">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:31:43 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="hist_id" id="DBF4EC30-03B6-9FFF-F813-3B70AC39F444">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:31:53 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rfe_id" id="BA32EA98-3E99-70DE-328C-CC6E96DB9F2F">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:32:24 UTC</createdTime>
+<generatorID>7D939637-201A-3004-FC7E-4B05DB2BA40F</generatorID>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>96ED1113-A95F-2697-0573-6F3A7FC26F18</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SC" id="A2B4501D-7B9E-A6CC-6FA1-0A6EF868C6FC">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 23:11:38 UTC</createdTime>
+<generatorID>76A7C698-915C-4699-A738-C3742CFCF3B6</generatorID>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>0124E28D-2114-A880-7978-AF6E872CAD07</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="history_effective_date" id="4875FADF-52C8-8048-B45C-621697055B1D">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 23:11:59 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_id" id="7BCA2CED-57A2-3064-A07B-9FDB4E9420C2">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 23:13:25 UTC</createdTime>
+<generatorID>E92B9C76-DFCF-2BEE-FC82-F5D9D3005B96</generatorID>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>9826B455-3171-A723-0384-F3F15EE00B5E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BB8001EC-7932-F515-9127-761AB813FFE2" name="F15A1_Hist PK">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:31:58 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DBF4EC30-03B6-9FFF-F813-3B70AC39F444</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

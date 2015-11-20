@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C062DB61-1BC0-AA55-9470-E9A6FDC16850" name="F15A1_Task">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:33:18 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="task_id" id="7161F5FA-BA2D-A0AD-8288-61C8FBF162C4">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:33:42 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="task_effective_date" id="E44DA1E3-B0BB-988E-34FD-E22FEB219342">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 23:08:57 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="task_abreviation" id="270FF3AC-4DFA-2880-42F8-AC06B4F83A6A">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 23:09:27 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="task_description" id="C324610D-81B1-A157-6B93-20E580AFBA03">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 23:10:06 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8EABE0BF-A860-4AFF-3809-4430E1968C86" name="F15A1_Tesk PK">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:33:47 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7161F5FA-BA2D-A0AD-8288-61C8FBF162C4</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

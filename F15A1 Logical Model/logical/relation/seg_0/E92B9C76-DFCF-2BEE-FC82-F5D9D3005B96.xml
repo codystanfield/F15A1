@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="emp_to_history_relation" directorySegmentName="seg_0" id="E92B9C76-DFCF-2BEE-FC82-F5D9D3005B96">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-12 23:13:25 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<sourcePk>9A8C4645-C2D3-8F94-92D1-1B86F16CB994</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F33E2467-7AAE-4BAC-D96E-2526522D0BE2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C05209F1-AE6C-9B12-6401-253F6EA72994</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

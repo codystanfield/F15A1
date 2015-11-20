@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="73A49D38-C475-0857-74A7-E2C25EEC954C" name="F15A1_doc">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:35:49 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="doc_id" id="0985EA8A-637E-1FFC-BE7A-A97EE3B230D7">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:35:57 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rfe_id" id="6F64E9B3-4CD9-BDB2-E8A0-C5F0EF613960">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:36:30 UTC</createdTime>
+<generatorID>1694C51C-017E-F2F8-36F3-83A38F1104A9</generatorID>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>96ED1113-A95F-2697-0573-6F3A7FC26F18</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7B430BF5-4834-86AE-4E5A-589ABDC48214" name="F15A1_doc PK">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-02 22:36:01 UTC</createdTime>
+<ownerDesignName>F15A1 Logical Model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="63117DCF-8CAC-2F63-D0EB-63F965041747" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0985EA8A-637E-1FFC-BE7A-A97EE3B230D7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
