@@ -438,7 +438,46 @@ begin
 end; 
 /
 
--- Table rfe_task_relationship has a compound primary key so no sequence or trigger was created for it.
+DROP SEQUENCE rfe_task_relationship_seq ; 
+create sequence rfe_task_relationship_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger rfe_task_relationship_PK_trig 
+before insert on rfe_task_relationship
+for each row 
+begin 
+select rfe_task_relationship_seq.nextval into :new.token_pk from dual; 
+end; 
+/
+alter table rfe_task_relationship add created date ; 
+alter table rfe_task_relationship add created_by VARCHAR2 (255) ; 
+alter table rfe_task_relationship add row_version_number integer ; 
+alter table rfe_task_relationship add updated date ; 
+alter table rfe_task_relationship add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger rfe_task_relationship_AUD_trig 
+before insert or update on rfe_task_relationship 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
 DROP INDEX F15A1_emp_emp_id_FK_0 ;
 CREATE INDEX F15A1_emp_emp_id_FK_0 ON F15A1_Auth(F15A1_emp_emp_id) ;
 DROP INDEX F15A1_emp_emp_id_FK_1 ;

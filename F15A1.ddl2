@@ -185,7 +185,23 @@ select F15A1_role_type_code_seq.nextval into :new.role_code_id from dual;
 end; 
 /
 
--- Table rfe_task_relationship has a compound primary key so no sequence or trigger was created for it.
+DROP SEQUENCE rfe_task_relationship_seq ; 
+create sequence rfe_task_relationship_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER rfe_task_relationship_PK_trig 
+; 
+
+create or replace trigger rfe_task_relationship_PK_trig 
+before insert on rfe_task_relationship
+for each row 
+begin 
+select rfe_task_relationship_seq.nextval into :new.token_pk from dual; 
+end; 
+/
+
 DROP INDEX F15A1_emp_emp_id_FK_0 ;
 CREATE INDEX F15A1_emp_emp_id_FK_0 ON F15A1_Auth(F15A1_emp_emp_id) ;
 DROP INDEX F15A1_emp_emp_id_FK_1 ;
