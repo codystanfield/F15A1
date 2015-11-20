@@ -72,25 +72,13 @@ BEGIN
               emp_name,
               emp_email,
               emp_office,
-              emp_phone,
-              emp_system_admin_flag,
-              emp_chairperson_flag,
-              emp_labdir_flag,
-              emp_chair_flag,
-              emp_execdir_flag,
-              emp_admin_flag)
+              emp_phone)
               VALUES(
               :NEW.emp_id,
               :NEW.emp_name,
               :NEW.emp_email,
               :NEW.emp_office,
-              :NEW.emp_phone,
-              :NEW.emp_system_admin_flag,
-              :NEW.emp_chairperson_flag,
-              :NEW.emp_labdir_flag,
-              :NEW.emp_chair_flag,
-              :NEW.emp_execdir_flag,
-              :NEW.emp_admin_flag);
+              :NEW.emp_phone);
 END;
 /
 
@@ -119,25 +107,13 @@ BEGIN
               emp_name,
               emp_email,
               emp_office,
-              emp_phone,
-              emp_system_admin_flag,
-              emp_chairperson_flag,
-              emp_labdir_flag,
-              emp_chair_flag,
-              emp_execdir_flag,
-              emp_admin_flag)
+              emp_phone)
               VALUES(
               :NEW.emp_id,
               :NEW.emp_name,
               :NEW.emp_email,
               :NEW.emp_office,
-              :NEW.emp_phone,
-              :NEW.emp_system_admin_flag,
-              :NEW.emp_chairperson_flag,
-              :NEW.emp_labdir_flag,
-              :NEW.emp_chair_flag,
-              :NEW.emp_execdir_flag,
-              :NEW.emp_admin_flag);
+              :NEW.emp_phone);
 END;
 /
 
@@ -166,25 +142,13 @@ BEGIN
               emp_name,
               emp_email,
               emp_office,
-              emp_phone,
-              emp_system_admin_flag,
-              emp_chairperson_flag,
-              emp_labdir_flag,
-              emp_chair_flag,
-              emp_execdir_flag,
-              emp_admin_flag)
+              emp_phone)
               VALUES(
               :NEW.emp_id,
               :NEW.emp_name,
               :NEW.emp_email,
               :NEW.emp_office,
-              :NEW.emp_phone,
-              :NEW.emp_system_admin_flag,
-              :NEW.emp_chairperson_flag,
-              :NEW.emp_labdir_flag,
-              :NEW.emp_chair_flag,
-              :NEW.emp_execdir_flag,
-              :NEW.emp_admin_flag);
+              :NEW.emp_phone);
 END;
 /
 
@@ -213,25 +177,13 @@ BEGIN
               emp_name,
               emp_email,
               emp_office,
-              emp_phone,
-              emp_system_admin_flag,
-              emp_chairperson_flag,
-              emp_labdir_flag,
-              emp_chair_flag,
-              emp_execdir_flag,
-              emp_admin_flag)
+              emp_phone)
               VALUES(
               :NEW.emp_id,
               :NEW.emp_name,
               :NEW.emp_email,
               :NEW.emp_office,
-              :NEW.emp_phone,
-              :NEW.emp_system_admin_flag,
-              :NEW.emp_chairperson_flag,
-              :NEW.emp_labdir_flag,
-              :NEW.emp_chair_flag,
-              :NEW.emp_execdir_flag,
-              :NEW.emp_admin_flag);
+              :NEW.emp_phone);
 END;
 /
 
@@ -260,25 +212,13 @@ BEGIN
               emp_name,
               emp_email,
               emp_office,
-              emp_phone,
-              emp_system_admin_flag,
-              emp_chairperson_flag,
-              emp_labdir_flag,
-              emp_chair_flag,
-              emp_execdir_flag,
-              emp_admin_flag)
+              emp_phone)
               VALUES(
               :NEW.emp_id,
               :NEW.emp_name,
               :NEW.emp_email,
               :NEW.emp_office,
-              :NEW.emp_phone,
-              :NEW.emp_system_admin_flag,
-              :NEW.emp_chairperson_flag,
-              :NEW.emp_labdir_flag,
-              :NEW.emp_chair_flag,
-              :NEW.emp_execdir_flag,
-              :NEW.emp_admin_flag);
+              :NEW.emp_phone);
 END;
 /
 
@@ -306,24 +246,12 @@ BEGIN
               emp_name,
               emp_email,
               emp_office,
-              emp_phone,
-              emp_system_admin_flag,
-              emp_chairperson_flag,
-              emp_labdir_flag,
-              emp_chair_flag,
-              emp_execdir_flag,
-              emp_admin_flag)
+              emp_phone)
               VALUES(
               :NEW.emp_id,
               :NEW.emp_name,
               :NEW.emp_email,
               :NEW.emp_office,
-              :NEW.emp_phone,
-              :NEW.emp_system_admin_flag,
-              :NEW.emp_chairperson_flag,
-              :NEW.emp_labdir_flag,
-              :NEW.emp_chair_flag,
-              :NEW.emp_execdir_flag,
-              :NEW.emp_admin_flag);
+              :NEW.emp_phone;
 END;
 /
