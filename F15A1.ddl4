@@ -61,7 +61,7 @@ SELECT
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
 
 create or replace TRIGGER F15A1_labdir_trigger
   INSTEAD OF insert ON F15A1_labdir_view
@@ -108,7 +108,7 @@ SELECT
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
 
 create or replace TRIGGER F15A1_chair_trigger
   INSTEAD OF insert ON F15A1_chair_view
@@ -155,7 +155,7 @@ SELECT
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
 
 create or replace TRIGGER F15A1_execdir_trigger
   INSTEAD OF insert ON F15A1_execdir_view
@@ -202,7 +202,7 @@ SELECT
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
 
 create or replace TRIGGER F15A1_admin_trigger
   INSTEAD OF insert ON F15A1_admin_view
@@ -249,7 +249,7 @@ SELECT
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
 
 create or replace TRIGGER F15A1_sysadmin_trigger
   INSTEAD OF insert ON F15A1_sysadmin_view
@@ -295,7 +295,7 @@ SELECT
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
 
 create or replace TRIGGER F15A1_chairperson_trigger
   INSTEAD OF insert ON F15A1_chairperson_view
