@@ -1,0 +1,329 @@
+drop view F15A1_emp_view;
+
+create view F15A1_emp_view as
+SELECT
+  e.emp_id,
+  e.emp_name,
+  l.lab_name,
+  e.emp_email,
+  e.emp_office,
+  e.emp_phone,
+  e.emp_status,
+  e.emp_system_admin_flag,
+  e.emp_chairperson_flag,
+  e.emp_labdir_flag,
+  e.emp_chair_flag,
+  e.emp_execdir_flag,
+  e.emp_admin_flag
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
+
+create or replace TRIGGER F15A1_emp_trigger
+  INSTEAD OF insert ON F15A1_emp_view
+  FOR EACH ROW
+BEGIN
+  insert into F15A1_Emp(
+              emp_id,
+              emp_name,
+              emp_email,
+              emp_office,
+              emp_phone,
+              emp_system_admin_flag,
+              emp_chairperson_flag,
+              emp_labdir_flag,
+              emp_chair_flag,
+              emp_execdir_flag,
+              emp_admin_flag)
+              VALUES(
+              :NEW.emp_id,
+              :NEW.emp_name,
+              :NEW.emp_email,
+              :NEW.emp_office,
+              :NEW.emp_phone,
+              :NEW.emp_system_admin_flag,
+              :NEW.emp_chairperson_flag,
+              :NEW.emp_labdir_flag,
+              :NEW.emp_chair_flag,
+              :NEW.emp_execdir_flag,
+              :NEW.emp_admin_flag);
+END;
+/
+
+
+
+drop view F15A1_labdir_view;
+
+create view F15A1_labdir_view as
+SELECT 
+    e.emp_id,
+    e.emp_name,
+    l.lab_name,
+    e.emp_email,
+    e.emp_office,
+    e.emp_phone,
+    e.emp_status
+FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+
+create or replace TRIGGER F15A1_labdir_trigger
+  INSTEAD OF insert ON F15A1_labdir_view
+  FOR EACH ROW
+BEGIN
+  insert into F15A1_Emp(
+              emp_id,
+              emp_name,
+              emp_email,
+              emp_office,
+              emp_phone,
+              emp_system_admin_flag,
+              emp_chairperson_flag,
+              emp_labdir_flag,
+              emp_chair_flag,
+              emp_execdir_flag,
+              emp_admin_flag)
+              VALUES(
+              :NEW.emp_id,
+              :NEW.emp_name,
+              :NEW.emp_email,
+              :NEW.emp_office,
+              :NEW.emp_phone,
+              :NEW.emp_system_admin_flag,
+              :NEW.emp_chairperson_flag,
+              :NEW.emp_labdir_flag,
+              :NEW.emp_chair_flag,
+              :NEW.emp_execdir_flag,
+              :NEW.emp_admin_flag);
+END;
+/
+
+
+
+
+drop view F15A1_chair_view;
+
+create view F15A1_chair_view as
+SELECT 
+    e.emp_id,
+    e.emp_name,
+    l.lab_name,
+    e.emp_email,
+    e.emp_office,
+    e.emp_phone,
+    e.emp_status
+FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+
+create or replace TRIGGER F15A1_chair_trigger
+  INSTEAD OF insert ON F15A1_chair_view
+  FOR EACH ROW
+BEGIN
+  insert into F15A1_Emp(
+              emp_id,
+              emp_name,
+              emp_email,
+              emp_office,
+              emp_phone,
+              emp_system_admin_flag,
+              emp_chairperson_flag,
+              emp_labdir_flag,
+              emp_chair_flag,
+              emp_execdir_flag,
+              emp_admin_flag)
+              VALUES(
+              :NEW.emp_id,
+              :NEW.emp_name,
+              :NEW.emp_email,
+              :NEW.emp_office,
+              :NEW.emp_phone,
+              :NEW.emp_system_admin_flag,
+              :NEW.emp_chairperson_flag,
+              :NEW.emp_labdir_flag,
+              :NEW.emp_chair_flag,
+              :NEW.emp_execdir_flag,
+              :NEW.emp_admin_flag);
+END;
+/
+
+
+
+
+drop view F15A1_execdir_view;
+
+create view F15A1_execdir_view as
+SELECT 
+    e.emp_id,
+    e.emp_name,
+    l.lab_name,
+    e.emp_email,
+    e.emp_office,
+    e.emp_phone,
+    e.emp_status
+FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+
+create or replace TRIGGER F15A1_execdir_trigger
+  INSTEAD OF insert ON F15A1_execdir_view
+  FOR EACH ROW
+BEGIN
+  insert into F15A1_Emp(
+              emp_id,
+              emp_name,
+              emp_email,
+              emp_office,
+              emp_phone,
+              emp_system_admin_flag,
+              emp_chairperson_flag,
+              emp_labdir_flag,
+              emp_chair_flag,
+              emp_execdir_flag,
+              emp_admin_flag)
+              VALUES(
+              :NEW.emp_id,
+              :NEW.emp_name,
+              :NEW.emp_email,
+              :NEW.emp_office,
+              :NEW.emp_phone,
+              :NEW.emp_system_admin_flag,
+              :NEW.emp_chairperson_flag,
+              :NEW.emp_labdir_flag,
+              :NEW.emp_chair_flag,
+              :NEW.emp_execdir_flag,
+              :NEW.emp_admin_flag);
+END;
+/
+
+
+
+
+drop view F15A1_admin_view;
+
+create view F15A1_admin_view as
+SELECT 
+    e.emp_id,
+    e.emp_name,
+    l.lab_name,
+    e.emp_email,
+    e.emp_office,
+    e.emp_phone,
+    e.emp_status
+FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+
+create or replace TRIGGER F15A1_admin_trigger
+  INSTEAD OF insert ON F15A1_admin_view
+  FOR EACH ROW
+BEGIN
+  insert into F15A1_Emp(
+              emp_id,
+              emp_name,
+              emp_email,
+              emp_office,
+              emp_phone,
+              emp_system_admin_flag,
+              emp_chairperson_flag,
+              emp_labdir_flag,
+              emp_chair_flag,
+              emp_execdir_flag,
+              emp_admin_flag)
+              VALUES(
+              :NEW.emp_id,
+              :NEW.emp_name,
+              :NEW.emp_email,
+              :NEW.emp_office,
+              :NEW.emp_phone,
+              :NEW.emp_system_admin_flag,
+              :NEW.emp_chairperson_flag,
+              :NEW.emp_labdir_flag,
+              :NEW.emp_chair_flag,
+              :NEW.emp_execdir_flag,
+              :NEW.emp_admin_flag);
+END;
+/
+
+
+
+
+drop view F15A1_sysadmin_view;
+
+create view F15A1_sysadmin_view as
+SELECT 
+    e.emp_id,
+    e.emp_name,
+    l.lab_name,
+    e.emp_email,
+    e.emp_office,
+    e.emp_phone,
+    e.emp_status
+FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+
+create or replace TRIGGER F15A1_sysadmin_trigger
+  INSTEAD OF insert ON F15A1_sysadmin_view
+  FOR EACH ROW
+BEGIN
+  insert into F15A1_Emp(
+              emp_id,
+              emp_name,
+              emp_email,
+              emp_office,
+              emp_phone,
+              emp_system_admin_flag,
+              emp_chairperson_flag,
+              emp_labdir_flag,
+              emp_chair_flag,
+              emp_execdir_flag,
+              emp_admin_flag)
+              VALUES(
+              :NEW.emp_id,
+              :NEW.emp_name,
+              :NEW.emp_email,
+              :NEW.emp_office,
+              :NEW.emp_phone,
+              :NEW.emp_system_admin_flag,
+              :NEW.emp_chairperson_flag,
+              :NEW.emp_labdir_flag,
+              :NEW.emp_chair_flag,
+              :NEW.emp_execdir_flag,
+              :NEW.emp_admin_flag);
+END;
+/
+
+
+
+drop view F15A1_chairperson_view;
+
+create view F15A1_chairperson_view as
+SELECT 
+    e.emp_id,
+    e.emp_name,
+    l.lab_name,
+    e.emp_email,
+    e.emp_office,
+    e.emp_phone,
+    e.emp_status
+FROM F15A1_emp e join F15A1_Lab l on e.F15Aq_Lab_lab_id = l.lab_id;
+
+create or replace TRIGGER F15A1_chairperson_trigger
+  INSTEAD OF insert ON F15A1_chairperson_view
+  FOR EACH ROW
+BEGIN
+  insert into F15A1_Emp(
+              emp_id,
+              emp_name,
+              emp_email,
+              emp_office,
+              emp_phone,
+              emp_system_admin_flag,
+              emp_chairperson_flag,
+              emp_labdir_flag,
+              emp_chair_flag,
+              emp_execdir_flag,
+              emp_admin_flag)
+              VALUES(
+              :NEW.emp_id,
+              :NEW.emp_name,
+              :NEW.emp_email,
+              :NEW.emp_office,
+              :NEW.emp_phone,
+              :NEW.emp_system_admin_flag,
+              :NEW.emp_chairperson_flag,
+              :NEW.emp_labdir_flag,
+              :NEW.emp_chair_flag,
+              :NEW.emp_execdir_flag,
+              :NEW.emp_admin_flag);
+END;
+/

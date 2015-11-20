@@ -1,0 +1,218 @@
+DROP SEQUENCE F15A1_Auth_seq ; 
+create sequence F15A1_Auth_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_Auth_PK_trig 
+; 
+
+create or replace trigger F15A1_Auth_PK_trig 
+before insert on F15A1_Auth
+for each row 
+begin 
+select F15A1_Auth_seq.nextval into :new.auth_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15A1_Comment_seq ; 
+create sequence F15A1_Comment_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_Comment_PK_trig 
+; 
+
+create or replace trigger F15A1_Comment_PK_trig 
+before insert on F15A1_Comment
+for each row 
+begin 
+select F15A1_Comment_seq.nextval into :new.comment_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15A1_Hist_seq ; 
+create sequence F15A1_Hist_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_Hist_PK_trig 
+; 
+
+create or replace trigger F15A1_Hist_PK_trig 
+before insert on F15A1_Hist
+for each row 
+begin 
+select F15A1_Hist_seq.nextval into :new.hist_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15A1_Lab_seq ; 
+create sequence F15A1_Lab_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_Lab_PK_trig 
+; 
+
+create or replace trigger F15A1_Lab_PK_trig 
+before insert on F15A1_Lab
+for each row 
+begin 
+select F15A1_Lab_seq.nextval into :new.lab_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15A1_Stat_Code_seq ; 
+create sequence F15A1_Stat_Code_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_Stat_Code_PK_trig 
+; 
+
+create or replace trigger F15A1_Stat_Code_PK_trig 
+before insert on F15A1_Stat_Code
+for each row 
+begin 
+select F15A1_Stat_Code_seq.nextval into :new.SC from dual; 
+end; 
+/
+
+DROP SEQUENCE F15A1_Task_seq ; 
+create sequence F15A1_Task_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_Task_PK_trig 
+; 
+
+create or replace trigger F15A1_Task_PK_trig 
+before insert on F15A1_Task
+for each row 
+begin 
+select F15A1_Task_seq.nextval into :new.task_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15A1_contact_seq ; 
+create sequence F15A1_contact_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_contact_PK_trig 
+; 
+
+create or replace trigger F15A1_contact_PK_trig 
+before insert on F15A1_contact
+for each row 
+begin 
+select F15A1_contact_seq.nextval into :new.contact_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15A1_doc_seq ; 
+create sequence F15A1_doc_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_doc_PK_trig 
+; 
+
+create or replace trigger F15A1_doc_PK_trig 
+before insert on F15A1_doc
+for each row 
+begin 
+select F15A1_doc_seq.nextval into :new.doc_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15A1_emp_seq ; 
+create sequence F15A1_emp_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_emp_PK_trig 
+; 
+
+create or replace trigger F15A1_emp_PK_trig 
+before insert on F15A1_emp
+for each row 
+begin 
+select F15A1_emp_seq.nextval into :new.emp_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15A1_rfe_seq ; 
+create sequence F15A1_rfe_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_rfe_PK_trig 
+; 
+
+create or replace trigger F15A1_rfe_PK_trig 
+before insert on F15A1_rfe
+for each row 
+begin 
+select F15A1_rfe_seq.nextval into :new.rfe_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15A1_role_type_code_seq ; 
+create sequence F15A1_role_type_code_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15A1_role_type_code_PK_trig 
+; 
+
+create or replace trigger F15A1_role_type_code_PK_trig 
+before insert on F15A1_role_type_code
+for each row 
+begin 
+select F15A1_role_type_code_seq.nextval into :new.role_code_id from dual; 
+end; 
+/
+
+-- Table rfe_task_relationship has a compound primary key so no sequence or trigger was created for it.
+DROP INDEX F15A1_emp_emp_id_FK_0 ;
+CREATE INDEX F15A1_emp_emp_id_FK_0 ON F15A1_Auth(F15A1_emp_emp_id) ;
+DROP INDEX F15A1_emp_emp_id_FK_1 ;
+CREATE INDEX F15A1_emp_emp_id_FK_1 ON F15A1_Comment(F15A1_emp_emp_id) ;
+DROP INDEX F15A1_rfe_rfe_id_FK_2 ;
+CREATE INDEX F15A1_rfe_rfe_id_FK_2 ON F15A1_Comment(F15A1_rfe_rfe_id) ;
+DROP INDEX F15A1_Stat_Code_sc_FK_3 ;
+CREATE INDEX F15A1_Stat_Code_sc_FK_3 ON F15A1_Hist(F15A1_Stat_Code_sc) ;
+DROP INDEX F15A1_emp_emp_id_FK_4 ;
+CREATE INDEX F15A1_emp_emp_id_FK_4 ON F15A1_Hist(F15A1_emp_emp_id) ;
+DROP INDEX F15A1_rfe_rfe_id_FK_5 ;
+CREATE INDEX F15A1_rfe_rfe_id_FK_5 ON F15A1_Hist(F15A1_rfe_rfe_id) ;
+DROP INDEX F15A1_emp_emp_id_FK_6 ;
+CREATE INDEX F15A1_emp_emp_id_FK_6 ON F15A1_contact(F15A1_emp_emp_id) ;
+DROP INDEX F15A1_rfe_rfe_id_FK_7 ;
+CREATE INDEX F15A1_rfe_rfe_id_FK_7 ON F15A1_contact(F15A1_rfe_rfe_id) ;
+DROP INDEX F15A1_rtc_rc_id_FK_8 ;
+CREATE INDEX F15A1_rtc_rc_id_FK_8 ON F15A1_contact(F15A1_rtc_rc_id) ;
+DROP INDEX F15A1_rfe_rfe_id_FK_9 ;
+CREATE INDEX F15A1_rfe_rfe_id_FK_9 ON F15A1_doc(F15A1_rfe_rfe_id) ;
+DROP INDEX F15A1_Auth_auth_id_FK_10 ;
+CREATE INDEX F15A1_Auth_auth_id_FK_10 ON F15A1_emp(F15A1_Auth_auth_id) ;
+DROP INDEX F15A1_Lab_lab_id_FK_11 ;
+CREATE INDEX F15A1_Lab_lab_id_FK_11 ON F15A1_emp(F15A1_Lab_lab_id) ;
+DROP INDEX F15A1_Stat_Code_sc_FK_12 ;
+CREATE INDEX F15A1_Stat_Code_sc_FK_12 ON F15A1_rfe(F15A1_Stat_Code_sc) ;
+DROP INDEX F15A1_rfe_rfe_id_FK_13 ;
+CREATE INDEX F15A1_rfe_rfe_id_FK_13 ON rfe_task_relationship(F15A1_rfe_rfe_id) ;
+DROP INDEX F15A1_Task_task_id_FK_14 ;
+CREATE INDEX F15A1_Task_task_id_FK_14 ON rfe_task_relationship(F15A1_Task_task_id) ;
