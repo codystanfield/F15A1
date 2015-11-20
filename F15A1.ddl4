@@ -4,7 +4,7 @@ create view F15A1_emp_view as
 SELECT
   e.emp_id,
   e.emp_name,
-  l.lab_id,
+  l.lab_name,
   e.emp_email,
   e.emp_office,
   e.emp_phone,
@@ -56,7 +56,7 @@ create view F15A1_labdir_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_id,
+    l.lab_name,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
@@ -92,7 +92,7 @@ create view F15A1_chair_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_id,
+    l.lab_name,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
@@ -128,7 +128,7 @@ create view F15A1_execdir_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_id,
+    l.lab_name,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
@@ -164,7 +164,7 @@ create view F15A1_admin_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_id,
+    l.lab_name,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
@@ -200,7 +200,7 @@ create view F15A1_system_admin_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_id,
+    l.lab_name,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
@@ -235,7 +235,7 @@ create view F15A1_chairperson_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_id,
+    l.lab_name,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
@@ -259,5 +259,36 @@ BEGIN
               :NEW.emp_email,
               :NEW.emp_office,
               :NEW.emp_phone);
+END;
+/
+
+
+drop view F15A1_rfe_view;
+
+create view F15A1_rfe_view as
+SELECT 
+  r.rfe_id,
+  s.status_text,
+  r.rfe_explanation,
+  r.rfe_alt_protections,
+  r.rfe_approval_review_date
+FROM F15A1_rfe r join F15A1_Stat_Code s on r.F15A1_Stat_Code_sc = s.SC;
+
+create or replace TRIGGER F15A1_rfe_view_trigger
+  INSTEAD OF insert ON F15A1_rfe_view
+  FOR EACH ROW
+BEGIN
+  insert into F15A1_rfe(
+              rfe_id,
+              F15A1_Stat_Code_sc,
+              rfe_explanation,
+              rfe_alt_protections,
+              rfe_approval_review_date)
+              VALUES(
+              :NEW.rfe_id,
+              100,
+              :NEW.rfe_explanation,
+              :NEW.rfe_alt_protections,
+              :NEW.rfe_approval_review_date);
 END;
 /

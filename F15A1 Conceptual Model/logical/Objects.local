@@ -14,7 +14,7 @@
    <object objectType="Entity" objectID="73A49D38-C475-0857-74A7-E2C25EEC954C" name="F15A1_doc" seqName="seg_0"/>
    <object objectType="Entity" objectID="F33E2467-7AAE-4BAC-D96E-2526522D0BE2" name="F15A1_emp" seqName="seg_0"/>
    <object objectType="Entity" objectID="04996B05-DC50-A490-0580-9B5D29B70D0A" name="F15A1_rfe" seqName="seg_0"/>
-   <object objectType="Entity" objectID="10417AD8-2484-7EE7-9C3F-E2277C6CFF97" name="F15A1_role_type_code" seqName="seg_0"/>
+   <object objectType="Entity" objectID="10417AD8-2484-7EE7-9C3F-E2277C6CFF97" name="F15A1_rtc" seqName="seg_0"/>
    <object objectType="Relation" objectID="CB06D391-C453-DED1-D930-7B729770DBC1" name="Relation_1" seqName="seg_0"/>
    <object objectType="Relation" objectID="1694C51C-017E-F2F8-36F3-83A38F1104A9" name="Relation_10" seqName="seg_0"/>
    <object objectType="Relation" objectID="B7CC9A45-4527-1924-E01B-9F65D1555BD4" name="Relation_11" seqName="seg_0"/>
