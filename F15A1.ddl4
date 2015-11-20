@@ -4,7 +4,7 @@ create view F15A1_emp_view as
 SELECT
   e.emp_id,
   e.emp_name,
-  l.lab_name,
+  l.lab_id,
   e.emp_email,
   e.emp_office,
   e.emp_phone,
@@ -56,12 +56,13 @@ create view F15A1_labdir_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_name,
+    l.lab_id,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
+WHERE e.emp_labdir_flag = '1';
 
 create or replace TRIGGER F15A1_labdir_trigger
   INSTEAD OF insert ON F15A1_labdir_view
@@ -91,12 +92,13 @@ create view F15A1_chair_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_name,
+    l.lab_id,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
+WHERE e.emp_chair_flag = '1';
 
 create or replace TRIGGER F15A1_chair_trigger
   INSTEAD OF insert ON F15A1_chair_view
@@ -126,12 +128,13 @@ create view F15A1_execdir_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_name,
+    l.lab_id,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
+WHERE e.emp_execdir_flag = '1';
 
 create or replace TRIGGER F15A1_execdir_trigger
   INSTEAD OF insert ON F15A1_execdir_view
@@ -161,12 +164,13 @@ create view F15A1_admin_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_name,
+    l.lab_id,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
+WHERE e.emp_admin_flag = '1';
 
 create or replace TRIGGER F15A1_admin_trigger
   INSTEAD OF insert ON F15A1_admin_view
@@ -190,21 +194,22 @@ END;
 
 
 
-drop view F15A1_sysadmin_view;
+drop view F15A1_system_admin_view;
 
-create view F15A1_sysadmin_view as
+create view F15A1_system_admin_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_name,
+    l.lab_id,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
+WHERE e.emp_system_admin_flag = '1';
 
-create or replace TRIGGER F15A1_sysadmin_trigger
-  INSTEAD OF insert ON F15A1_sysadmin_view
+create or replace TRIGGER F15A1_system_admin_trigger
+  INSTEAD OF insert ON F15A1_system_admin_view
   FOR EACH ROW
 BEGIN
   insert into F15A1_Emp(
@@ -230,12 +235,13 @@ create view F15A1_chairperson_view as
 SELECT 
     e.emp_id,
     e.emp_name,
-    l.lab_name,
+    l.lab_id,
     e.emp_email,
     e.emp_office,
     e.emp_phone,
     e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
+WHERE e.emp_chairperson_flag = '1';
 
 create or replace TRIGGER F15A1_chairperson_trigger
   INSTEAD OF insert ON F15A1_chairperson_view
