@@ -1,0 +1,708 @@
+Neo4j on conn "CREATE (:unit { NAME : 'Warrior', TYPE : 'Melee', CLASS : 'Standard', TECH : '(None)', COST : '40.0', MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Settler', TYPE : 'Civilian', CLASS : 'Civilian', TECH : '(None)', COST : '106.0', MOVES : '2.0', NOTES : 'Can Found Cities. City growth suspended during production'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Worker', TYPE : 'Civilian', CLASS : 'Civilian', TECH : '(None)', COST : '70.0', MOVES : '2.0', NOTES : 'Can build tile improvements'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Scout', TYPE : 'Melee', CLASS : 'Recon', TECH : '(None)', COST : '25.0', MOVES : '2.0', NOTES : 'Ignores terrain cost'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Archer', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Archery', COST : '40.0', MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Spearman', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Bronze Working', COST : '56.0', MOVES : '2.0', NOTES : 'Gains +50% bonus vs. Mounted'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Chariot Archer', TYPE : 'Ranged', CLASS : 'Harasser', TECH : 'The Wheel', COST : '56.0', MOVES : '4.0', NOTES : 'Rough terrain penalty, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Trireme', TYPE : 'Melee', CLASS : 'Naval', TECH : 'Sailing', COST : '56.0', MOVES : '4.0', NOTES : 'Cannot enter deep ocean'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Work Boat', TYPE : 'Civilian', CLASS : 'Civilian', TECH : 'Sailing', COST : '30.0', MOVES : '4.0', NOTES : 'Can build Fishing Boats and Offshore Platform'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great General', TYPE : 'Civilian', CLASS : 'Special', TECH : '(None)', COST : '(None)', MOVES : '2.0', NOTES : 'Has +25% bonus to nearby units; can build Citadel'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great Scientist', TYPE : 'Civilian', CLASS : 'Special', TECH : '(None)', COST : '(None)', MOVES : '2.0', NOTES : 'Can build Academy'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great Engineer', TYPE : 'Civilian', CLASS : 'Special', TECH : '(None)', COST : '(None)', MOVES : '2.0', NOTES : 'Can build Manufactory'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great Merchant', TYPE : 'Civilian', CLASS : 'Special', TECH : '(None)', COST : '(None)', MOVES : '2.0', NOTES : 'Can build Customs House'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great Artist', TYPE : 'Civilian', CLASS : 'Special', TECH : '(None)', COST : '(None)', MOVES : '2.0', NOTES : 'Create Great Work, Trigger Golden Age'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great Writer', TYPE : 'Civilian', CLASS : 'Special', TECH : '(None)', COST : '(None)', MOVES : '2.0', NOTES : 'Create Great Work, Create Political Treatise'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great Musician', TYPE : 'Civilian', CLASS : 'Special', TECH : '(None)', COST : '(None)', MOVES : '2.0', NOTES : 'Create Great Work, Concert Tour'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great Prophet', TYPE : 'Civilian', CLASS : 'Religious', TECH : '(None)', COST : '(None)', MOVES : '2.0', NOTES : 'Found Religion, Spread Religion, Build Holy Site'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great Admiral', TYPE : 'Civilian', CLASS : 'Naval', TECH : '(None)', COST : '(None)', MOVES : '4.0', NOTES : 'Gives +15% combat bonus, can heal nearby naval units'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Caravan', TYPE : 'Civilian', CLASS : 'Trade', TECH : 'Animal Husbandry', COST : '75.0', MOVES : '1.0', NOTES : 'Establish Trade Route, Limited Visibility'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Cargo Ship', TYPE : 'Civilian', CLASS : 'Trade', TECH : 'Sailing', COST : '100.0', MOVES : '1.0', NOTES : 'Establish Trade Route, Limited Visibility'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Merchant of Venice', TYPE : 'Civilian', CLASS : 'Special', TECH : '(None)', COST : '(None)', MOVES : '2.0', NOTES : 'Trade Mission Bonus'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Missionary', TYPE : 'Civilian', CLASS : 'Religious', TECH : '(None)', COST : '200.0', MOVES : '4.0', NOTES : 'Spread Religion'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Inquisitor', TYPE : 'Civilian', CLASS : 'Religious', TECH : '(None)', COST : '200.0', MOVES : '3.0', NOTES : 'Remove Heresy'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Pathfinder', TYPE : 'Melee', CLASS : 'Recon', TECH : '(None)', COST : '45.0', MOVES : '2.0', NOTES : 'Shoshone UU*; Native Tongue, ignores terrain cost'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Khan', TYPE : 'Civilian', CLASS : 'Special', TECH : '(Great General)', COST : '(None)', MOVES : '5.0', NOTES : 'Mongolian UU*; Heals adjacent units.'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Brute', TYPE : 'Melee', CLASS : 'Standard', TECH : '(None)', COST : '20.0', MOVES : '2.0', NOTES : 'Barbarian UU*'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Galley', TYPE : 'Melee', CLASS : 'Naval', TECH : '(None)', COST : '50.0', MOVES : '3.0', NOTES : 'Barbarian UU*; Cannot enter deep ocean'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Hand-Axe', TYPE : 'Ranged', CLASS : 'Standard', TECH : '(None)', COST : '56.0', MOVES : '2.0', NOTES : 'Barbarian UU*; may not melee attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Bowman', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Archery', COST : '40.0', MOVES : '2.0', NOTES : 'Babylonian UU*;'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'War Chariot', TYPE : 'Ranged', CLASS : 'Harasser', TECH : 'The Wheel', COST : '56.0', MOVES : '5.0', NOTES : 'Egyptian UU*; no defensive bonuses, rough terrain penalty'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Hoplite', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Bronze Working', COST : '56.0', MOVES : '2.0', NOTES : 'Greek UU*; +100% vs Mounted'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Phalanx', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Mining', COST : '56.0', MOVES : '2.0', NOTES : 'Sumerian UU*; +100% vs Mounted'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Heavy Chariot', TYPE : 'Ranged', CLASS : 'Harasser', TECH : 'The Wheel', COST : '100.0', MOVES : '3.0', NOTES : 'Hittite UU*; Shock I'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Immortal', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Bronze Working', COST : '56.0', MOVES : '2.0', NOTES : 'Persian UU*; +100% vs Mounted, heals at double rate'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Jaguar', TYPE : 'Melee', CLASS : 'Standard', TECH : '(None)', COST : '40.0', MOVES : '2.0', NOTES : 'Aztec UU*; +50% combat strength in Jungle, heals +2 on kill, Woodsman'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'War Elephant', TYPE : 'Ranged', CLASS : 'Harasser', TECH : 'The Wheel', COST : '70.0', MOVES : '3.0', NOTES : 'Indian UU*, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Slinger', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Archery', COST : '40.0', MOVES : '2.0', NOTES : 'Inca UU*; Withdraw Before Melee'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Maori Warrior', TYPE : 'Melee', CLASS : 'Standard', TECH : '(None)', COST : '40.0', MOVES : '2.0', NOTES : 'Polyneisan UU*; Reduces enemy strength 10%'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Atlatlist', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Archery', COST : '36.0', MOVES : '2.0', NOTES : 'Mayan UU*; May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Pictish Warrior', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Bronze Working', COST : '56.0', MOVES : '2.0', NOTES : 'Celtic UU*; +Faith per kill, free pillage, 20% Foreign Lands Bonus,'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Battering Ram', TYPE : 'Melee', CLASS : 'Siege', TECH : 'Bronze Working', COST : '75.0', MOVES : '2.0', NOTES : 'Hun UU*; +300% vs cities, (None)1 sight, (None)33% on defense, Cover I, City Attack Only, No Defense Bonus'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Horse Archer', TYPE : 'Ranged', CLASS : 'Harasser', TECH : 'The Wheel', COST : '56.0', MOVES : '4.0', NOTES : 'Hun UU*; Accuracy I'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Quinquereme', TYPE : 'Melee', CLASS : 'Naval', TECH : 'Sailing', COST : '45.0', MOVES : '4.0', NOTES : 'Carthage UU*; coast only'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Dromon', TYPE : 'Ranged', CLASS : 'Naval', TECH : 'Sailing', COST : '56.0', MOVES : '4.0', NOTES : 'Byzantine UU*; +50% vs naval, coast only'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Siege Tower', TYPE : 'Melee', CLASS : 'Siege', TECH : 'Mathematics', COST : '75.0', MOVES : '2.0', NOTES : 'Assyrian UU*; Sapper, +200% vs Cities, Cover I, +1 Sight, City attack only'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'African Forest Elephant', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Horseback Riding', COST : '100.0', MOVES : '3.0', NOTES : 'Carthage UU*; Feared Elephant, Great Generals II, Can Move After Attacking, -33% vs. Cities, No Defensive Bonus'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Swordsman', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Iron Working', COST : '75.0', MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Horseman', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Horseback Riding', COST : '75.0', MOVES : '4.0', NOTES : 'Can move after attacking, no defensive bonuses, -33% vs cities'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Composite Bowman', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Construction', COST : '75.0', MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Catapult', TYPE : 'Ranged', CLASS : 'Siege', TECH : 'Mathematics', COST : '75.0', MOVES : '2.0', NOTES : 'Must set up to fire; +200% vs Cities, -1 vision, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Companion Cavalry', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Horseback Riding', COST : '75.0', MOVES : '5.0', NOTES : 'Greek UU*; can move after attack, Great Generals I, no defensive bonuses, -33% vs. Cities'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Legion', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Iron Working', COST : '75.0', MOVES : '2.0', NOTES : 'Roman UU*; Can build forts and roads.'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Ballista', TYPE : 'Ranged', CLASS : 'Siege', TECH : 'Mathematics', COST : '75.0', MOVES : '2.0', NOTES : 'Roman UU*; Must set up to fire; +200% vs Cities, -1 vision, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Cataphract', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Horseback Riding', COST : '75.0', MOVES : '3.0', NOTES : 'Byzantine UU*; Can Move After Attacking, -25% vs. Cities'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Mohawk Warrior', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Iron Working', COST : '75.0', MOVES : '2.0', NOTES : 'Iroquois UU*; +50% combat strength in Forest/Jungle'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Kris Swordsman', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Iron Working', COST : '75.0', MOVES : '2.0', NOTES : 'Indonesian UU*; Mystic Blade'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Pikeman', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Civil Service', COST : '90.0', MOVES : '2.0', NOTES : 'Has +100% bonus vs. Mounted'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Crossbowman', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Machinery', COST : '120.0', MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Longswordsman', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Steel', COST : '120.0', MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Knight', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Chivalry', COST : '120.0', MOVES : '4.0', NOTES : 'Can move after attacking, no defensive bonuses, -33% vs. Cities'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Trebuchet', TYPE : 'Ranged', CLASS : 'Siege', TECH : 'Physics', COST : '120.0', MOVES : '2.0', NOTES : 'Must set up to fire; +200% vs Cities, -1 vision, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Landsknecht', TYPE : 'Melee', CLASS : 'Special', TECH : 'Civil Service', COST : '45.0', MOVES : '2.0', NOTES : 'Has +50% vs Mounted, Free Pillage, Double Plunder, Can only be acquired through Commerce'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Mandekalu Cavalry', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Chivalry', COST : '120.0', MOVES : '4.0', NOTES : 'Songhai UU*; can move after attacking, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Camel Archer', TYPE : 'Ranged', CLASS : 'Harasser', TECH : 'Chivalry', COST : '120.0', MOVES : '4.0', NOTES : 'Arab UU*; Can Move After Attacking, no defensive bonsues'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Keshik', TYPE : 'Ranged', CLASS : 'Harasser', TECH : 'Chivalry', COST : '165.0', MOVES : '5.0', NOTES : 'Mongolian UU*; Great Generals I, Quick Study, can move after attacking, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Samurai', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Steel', COST : '120.0', MOVES : '2.0', NOTES : 'Japanese UU*; Shock I; Great Generals II; Can build Fishing Boats'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Longbowman', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Machinery', COST : '120.0', MOVES : '2.0', NOTES : 'English UU*; May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Chu-Ko-Nu', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Machinery', COST : '120.0', MOVES : '2.0', NOTES : 'Chinese UU*; May Attack Twice'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Naresuan's Elephant', TYPE : 'Ranged', CLASS : 'Defensive', TECH : 'Chivalry', COST : '120.0', MOVES : '3.0', NOTES : 'Siamese UU*; +50% vs Mounted, can move after attacking, no defensive bonuses, -33% vs. Cities'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Berserker', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Steel', COST : '120.0', MOVES : '3.0', NOTES : 'Denmark UU*; Amphibious'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Conquistador', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Chivalry', COST : '120.0', MOVES : '4.0', NOTES : 'Spanish UU*; no penalty vs. cities; +2 sight; Embarkation With Defense; can found cities'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Hwach'a', TYPE : 'Ranged', CLASS : 'Siege', TECH : 'Physics', COST : '120.0', MOVES : '2.0', NOTES : 'Korean UU*; Must Set Up, No Defensive Bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Huscarl', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Steel', COST : '110.0', MOVES : '2.0', NOTES : 'Anglo Saxon UU*; +50% vs. Mounted, Cover I'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Galleass', TYPE : 'Ranged', CLASS : 'Naval', TECH : 'Compass', COST : '100.0', MOVES : '3.0', NOTES : 'Cannot Enter Deep Ocean'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Impi', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Civil Service', COST : '90.0', MOVES : '2.0', NOTES : 'Zulu UU*; Spear Throw, +50% vs Mounted'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great Galleass', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Compass', COST : '110.0', MOVES : '3.0', NOTES : 'Venetian UU*; cannot enter deep ocean'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Musketman', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Gunpowder', COST : '150.0', MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Lancer', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Metallurgy', COST : '185.0', MOVES : '4.0', NOTES : 'Formation I, Can move after attacking'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Cannon', TYPE : 'Ranged', CLASS : 'Siege', TECH : 'Chemistry', COST : '185.0', MOVES : '2.0', NOTES : 'Must set up to fire; +200% vs Cities, -1 vision, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Caravel', TYPE : 'Melee', CLASS : 'Recon', TECH : 'Astronomy', COST : '120.0', MOVES : '4.0', NOTES : 'Has +1 Sight, Withdraw Before Melee'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Musketeer', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Gunpowder', COST : '150.0', MOVES : '2.0', NOTES : 'French UU*'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Minuteman', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Gunpowder', COST : '150.0', MOVES : '2.0', NOTES : 'American UU*; ignores terrain cost, Drill I'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Tercio', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Gunpowder', COST : '155.0', MOVES : '2.0', NOTES : 'Spanish UU*; +50% vs Mounted'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Turtle Ship', TYPE : 'Melee', CLASS : 'Naval', TECH : 'Astronomy', COST : '120.0', MOVES : '4.0', NOTES : 'Korean UU*; Cannot Enter Deep Ocean'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Frigate', TYPE : 'Ranged', CLASS : 'Naval', TECH : 'Navigation', COST : '185.0', MOVES : '5.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Ship of the Line', TYPE : 'Ranged', CLASS : 'Naval', TECH : 'Navigation', COST : '170.0', MOVES : '7.0', NOTES : 'English UU*; +1 sight range'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Privateer', TYPE : 'Melee', CLASS : 'Naval', TECH : 'Navigation', COST : '150.0', MOVES : '5.0', NOTES : 'Coastal Raider I, Prize Ships'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Sea Beggar', TYPE : 'Melee', CLASS : 'Naval', TECH : 'Navigation', COST : '150.0', MOVES : '5.0', NOTES : 'Dutch UU*; Prize Ships, Coastal Raider II, Supply'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Hakkapeliitta', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Metallurgy', COST : '185.0', MOVES : '4.0', NOTES : 'Swedish UU*; Formation I, +15% bonus when stacked with General, Can Move After Attacking, Transfer Movement to General'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Sipahi', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Metallurgy', COST : '185.0', MOVES : '5.0', NOTES : 'Ottoman UU* Formation I, +1 sight range, Can Move After Attacking, Free Pillage'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Janissary', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Gunpowder', COST : '150.0', MOVES : '2.0', NOTES : 'Ottoman UU*; +25% strength when attacking; heals +50 if enemy destroyed'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Nau', TYPE : 'Melee', CLASS : 'Naval', TECH : 'Astronomy', COST : '120.0', MOVES : '5.0', NOTES : 'Portguese UU*; Exotic Cargo, +1 Sight, Withdraw Before Melee'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Winged Hussar', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Metallurgy', COST : '185.0', MOVES : '5.0', NOTES : 'Polish UU*; Heavy Charge, Shock I, Formation I, -33% vs Cities, no def. bonus, move after attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Archaeologist', TYPE : 'Civilian', CLASS : 'Civilian', TECH : 'Archaeology', COST : '200.0', MOVES : '4.0', NOTES : 'Construct Archaeological Dig; requires University'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Rifleman', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Rifling', COST : '225.0', MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Cavalry', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Military Science', COST : '225.0', MOVES : '4.0', NOTES : 'Can Move After Attacking, -33% vs Cities, No Defensive Bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Ironclad', TYPE : 'Melee', CLASS : 'Naval', TECH : 'Steam Power', COST : '270.0', MOVES : '3.0', NOTES : 'Has +33% vs Cities, Double Movement in Coast'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Gatling Gun', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Industrialization', COST : '225.0', MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Cossack', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Military Science', COST : '225.0', MOVES : '4.0', NOTES : 'Russian UU*; can move after attacking, +33% vs damaged units, -33% vs Cities, No Defensive Bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Carolean', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Rifling', COST : '225.0', MOVES : '2.0', NOTES : 'Swedish UU*; March'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Norwegian Ski Infantry', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Rifling', COST : '220.0', MOVES : '2.0', NOTES : 'Denmark UU*; bonuses on hills, snow, tundra'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Hussar', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Military Science', COST : '225.0', MOVES : '5.0', NOTES : 'Austrian UU*; +1 Sight, +50% Flanking, Can Move After Attacking, -33% vs cities, No Defensive Bonses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Mehal Sefari', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Rifling', COST : '200.0', MOVES : '2.0', NOTES : 'Ethiopian UU*; Drill I, Near Capital Bonus'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Berber Cavalry', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Military Science', COST : '225.0', MOVES : '4.0', NOTES : 'Moroccan UU*; bonus in Desert and friendly territory'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Comanche Riders', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Military Science', COST : '200.0', MOVES : '4.0', NOTES : 'Shoshone UU*; +1 Move'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Machine Gun', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Ballistics', COST : '350.0', MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Triplane', TYPE : 'Ranged', CLASS : 'Air', TECH : 'Flight', COST : '325.0', MOVES : '(None)', NOTES : 'Interception (50), Air Sweep, Air Recon, +150% vs Bombers and Helicopters'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great War Bomber', TYPE : 'Ranged', CLASS : 'Air', TECH : 'Flight', COST : '325.0', MOVES : '(None)', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Great War Infantry', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Replaceable Parts', COST : '320.0', MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Landship', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Combustion', COST : '350.0', MOVES : '4.0', NOTES : '(WWI Tank)'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Infantry', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Plastics', COST : '320.0', MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Artillery', TYPE : 'Ranged', CLASS : 'Siege', TECH : 'Dynamite', COST : '250.0', MOVES : '2.0', NOTES : 'Must set up to fire; +200% vs Cities, -1 vision, no defensive bonuses, Indirect Fire'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Destroyer', TYPE : 'Melee', CLASS : 'Naval', TECH : 'Electricity', COST : '375.0', MOVES : '6.0', NOTES : 'Has +3 sight range, +100% vs Submarines, Intercept, Indirect Fire'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Battleship', TYPE : 'Ranged', CLASS : 'Naval', TECH : 'Telegraph', COST : '375.0', MOVES : '3.0', NOTES : 'Indirect Fire'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Submarine', TYPE : 'Ranged', CLASS : 'Naval', TECH : 'Refrigeration', COST : '375.0', MOVES : '5.0', NOTES : 'Invisible, Can See Submarines, May Enter Ice Tiles, +100 on attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Foreign Legion', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Replaceable Parts', COST : '320.0', MOVES : '2.0', NOTES : 'Foreign Lands +20% Bonus'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Anti-Tank Gun', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Combined Arms', COST : '270.0', MOVES : '2.0', NOTES : 'Has +100% vs. Armor'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Anti-Aircraft Gun', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Radio', COST : '375.0', MOVES : '2.0', NOTES : 'Interception(100), +150% vs. bombers & helicopters'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Pracinha', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Plastics', COST : '375.0', MOVES : '2.0', NOTES : 'Brazilian UU*; Golden Age from Victories'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Tank', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Combustion', COST : '375.0', MOVES : '5.0', NOTES : 'Can move after attack, No Defensive Bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Fighter', TYPE : 'Ranged', CLASS : 'Air', TECH : 'Flight', COST : '375.0', MOVES : '(None)', NOTES : 'Interception(100), Air Sweep, Recon, +150% vs Bombers & Helicopters'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Bomber', TYPE : 'Ranged', CLASS : 'Air', TECH : 'Radar', COST : '375.0', MOVES : '(None)', NOTES : 'Vulnerable to Fighters'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Carrier', TYPE : 'Melee', CLASS : 'Naval', TECH : 'Flight', COST : '375.0', MOVES : '5.0', NOTES : 'Can carry 3 aircraft, May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Marine', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Penicillin', COST : '400.0', MOVES : '2.0', NOTES : 'Amphibious, +1 Sight When Embarked, Double Embarked Defense'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Paratrooper', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Radar', COST : '375.0', MOVES : '2.0', NOTES : 'May Paradrop up to 5 hexes'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Panzer', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Combustion', COST : '375.0', MOVES : '6.0', NOTES : 'German UU*; can move after attack, No Defensive Bonuses'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Zero', TYPE : 'Ranged', CLASS : 'Air', TECH : 'Flight', COST : '375.0', MOVES : '(None)', NOTES : 'Japanese UU*; Interception(100), +33% vs Fighters, Recon, Air Sweep, +150 vs Bombers & Helicopters'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'B-17', TYPE : 'Ranged', CLASS : 'Air', TECH : 'Radar', COST : '375.0', MOVES : '(None)', NOTES : 'American UU*; Evasion, Melee 1'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Atomic Bomb', TYPE : 'Ranged', CLASS : 'Special', TECH : 'Nuclear Fission', COST : '600.0', MOVES : '(None)', NOTES : 'Evasion(50)'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Bazooka', TYPE : 'Ranged', CLASS : 'Standard', TECH : 'Nuclear Fission', COST : '375.0', MOVES : '2.0', NOTES : 'May not melee attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Helicopter Gunship', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Rocketry', COST : '425.0', MOVES : '6.0', NOTES : 'All Tile Cost 1, Hovering Unit, +100 vs Tanks, No Defensive Bonuses, Can't Capture Cities'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Rocket Artillery', TYPE : 'Ranged', CLASS : 'Siege', TECH : 'Rocketry', COST : '425.0', MOVES : '3.0', NOTES : 'Must set up to fire; +200% vs Cities, -1 vision, no defensive bonuses, Indirect Fire'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Mobile SAM', TYPE : 'Melee', CLASS : 'Defensive', TECH : 'Computers', COST : '425.0', MOVES : '3.0', NOTES : 'Interception(100), +150% vs. Air'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Jet Fighter', TYPE : 'Ranged', CLASS : 'Air', TECH : 'Lasers', COST : '425.0', MOVES : '(None)', NOTES : 'Interception(100), Recon, Air Sweep, +150 vs Bombers & Helicopters'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Modern Armor', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Lasers', COST : '425.0', MOVES : '5.0', NOTES : 'No Defensive Bonuses, Can move after attack'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Mechanized Infantry', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Electronics', COST : '375.0', MOVES : '4.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Stealth Bomber', TYPE : 'Ranged', CLASS : 'Air', TECH : 'Stealth', COST : '425.0', MOVES : '(None)', NOTES : 'Evasion(100), Recon'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Nuclear Missile', TYPE : 'Ranged', CLASS : 'Special', TECH : 'Advanced Ballistics', COST : '1000.0', MOVES : '(None)', NOTES : 'Evasion(50)'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Guided Missile', TYPE : 'Ranged', CLASS : 'Special', TECH : 'Satellites', COST : '150.0', MOVES : '(None)', NOTES : 'Destroyed on attack; Evasion(100)'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Nuclear Submarine', TYPE : 'Ranged', CLASS : 'Naval', TECH : 'Computers', COST : '425.0', MOVES : '6.0', NOTES : 'Can carry 2 missiles; +100 vs submarines; invisible, Can See Submarines, May Enter Ice Tiles'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Missile Cruiser', TYPE : 'Ranged', CLASS : 'Naval', TECH : 'Robotics', COST : '425.0', MOVES : '7.0', NOTES : 'Can See Submarines, +100 vs Submarines, Can Carry 3 Cargo, Interception(100)'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'XCOM Squad', TYPE : 'Melee', CLASS : 'Standard', TECH : 'Nanotechnology', COST : '400.0', MOVES : '2.0', NOTES : 'Skyranger (40 drop range)'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'Giant Death Robot', TYPE : 'Melee', CLASS : 'Harasser', TECH : 'Nuclear Fusion', COST : '425.0', MOVES : '5.0', NOTES : 'no defensive bonuses, can move after attacking.'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'SS Booster', TYPE : 'Civilian', CLASS : 'Special', TECH : 'Robotics', COST : '750.0', MOVES : '2.0', NOTES : 'Starship component; 3 required'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'SS Cockpit', TYPE : 'Civilian', CLASS : 'Special', TECH : 'Satellites', COST : '750.0', MOVES : '2.0', NOTES : 'Starship component; 1 required'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'SS Engine', TYPE : 'Civilian', CLASS : 'Special', TECH : 'Particle Physics', COST : '750.0', MOVES : '2.0', NOTES : 'Starship component; 1 required'})"
+
+Neo4j on conn "CREATE (:unit { NAME : 'SS Stasis Chamber', TYPE : 'Civilian', CLASS : 'Special', TECH : 'Nanotechnology', COST : '750.0', MOVES : '2.0', NOTES : 'Starship component; 1 required'})"
+
+
+
+Neo4j on conn "CREATE (:tech { TECH : 'Particle Physics'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Combustion'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Iron Working'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Electricity'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Metallurgy'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Stealth'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Refrigeration'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Telegraph'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Dynamite'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Mathematics'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Electronics'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Military Science'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Rifling'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Nuclear Fusion'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Steam Power'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Mining'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Combined Arms'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Flight'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Navigation'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Rocketry'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Advanced Ballistics'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Construction'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Compass'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Satellites'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Nanotechnology'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Astronomy'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Gunpowder'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Steel'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Archery'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Sailing'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Replaceable Parts'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Industrialization'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Computers'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Nuclear Fission'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Civil Service'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Animal Husbandry'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Plastics'})"
+
+Neo4j on conn "CREATE (:tech { TECH : '(None)'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Chemistry'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Physics'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Archaeology'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Chivalry'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Robotics'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Ballistics'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Radar'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Radio'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Horseback Riding'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Lasers'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Bronze Working'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'The Wheel'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Penicillin'})"
+
+Neo4j on conn "CREATE (:tech { TECH : 'Machinery'})"
+
+
+
+Neo4j on conn "CREATE (:class { CLASS : 'Naval'})"
+
+Neo4j on conn "CREATE (:class { CLASS : 'Civilian'})"
+
+Neo4j on conn "CREATE (:class { CLASS : 'Recon'})"
+
+Neo4j on conn "CREATE (:class { CLASS : 'Siege'})"
+
+Neo4j on conn "CREATE (:class { CLASS : 'Standard'})"
+
+Neo4j on conn "CREATE (:class { CLASS : 'Harasser'})"
+
+Neo4j on conn "CREATE (:class { CLASS : 'Defensive'})"
+
+Neo4j on conn "CREATE (:class { CLASS : 'Air'})"
+
+Neo4j on conn "CREATE (:class { CLASS : 'Trade'})"
+
+Neo4j on conn "CREATE (:class { CLASS : 'Religious'})"
+
+Neo4j on conn "CREATE (:class { CLASS : 'Special'})"
+
+
+
+Neo4j on conn "CREATE (:type { TYPE : 'Melee'})"
+
+Neo4j on conn "CREATE (:type { TYPE : 'Ranged'})"
+
+Neo4j on conn "CREATE (:type { TYPE : 'Civilian'})"
+
+
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Particle Physics' AND b.tech = 'Particle Physics' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Combustion' AND b.tech = 'Combustion' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Iron Working' AND b.tech = 'Iron Working' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Electricity' AND b.tech = 'Electricity' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Metallurgy' AND b.tech = 'Metallurgy' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Stealth' AND b.tech = 'Stealth' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Refrigeration' AND b.tech = 'Refrigeration' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Telegraph' AND b.tech = 'Telegraph' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Dynamite' AND b.tech = 'Dynamite' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Mathematics' AND b.tech = 'Mathematics' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Electronics' AND b.tech = 'Electronics' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Military Science' AND b.tech = 'Military Science' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Rifling' AND b.tech = 'Rifling' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Nuclear Fusion' AND b.tech = 'Nuclear Fusion' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Steam Power' AND b.tech = 'Steam Power' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Mining' AND b.tech = 'Mining' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Combined Arms' AND b.tech = 'Combined Arms' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Flight' AND b.tech = 'Flight' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Navigation' AND b.tech = 'Navigation' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Rocketry' AND b.tech = 'Rocketry' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Advanced Ballistics' AND b.tech = 'Advanced Ballistics' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Construction' AND b.tech = 'Construction' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Compass' AND b.tech = 'Compass' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Satellites' AND b.tech = 'Satellites' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Nanotechnology' AND b.tech = 'Nanotechnology' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Astronomy' AND b.tech = 'Astronomy' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Gunpowder' AND b.tech = 'Gunpowder' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Steel' AND b.tech = 'Steel' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Archery' AND b.tech = 'Archery' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Sailing' AND b.tech = 'Sailing' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Replaceable Parts' AND b.tech = 'Replaceable Parts' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Industrialization' AND b.tech = 'Industrialization' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Computers' AND b.tech = 'Computers' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Nuclear Fission' AND b.tech = 'Nuclear Fission' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Civil Service' AND b.tech = 'Civil Service' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Animal Husbandry' AND b.tech = 'Animal Husbandry' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Plastics' AND b.tech = 'Plastics' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = '(None)' AND b.tech = '(None)' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Chemistry' AND b.tech = 'Chemistry' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Physics' AND b.tech = 'Physics' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Archaeology' AND b.tech = 'Archaeology' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Chivalry' AND b.tech = 'Chivalry' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Robotics' AND b.tech = 'Robotics' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Ballistics' AND b.tech = 'Ballistics' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Radar' AND b.tech = 'Radar' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Radio' AND b.tech = 'Radio' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Horseback Riding' AND b.tech = 'Horseback Riding' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Lasers' AND b.tech = 'Lasers' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Bronze Working' AND b.tech = 'Bronze Working' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'The Wheel' AND b.tech = 'The Wheel' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Penicillin' AND b.tech = 'Penicillin' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Machinery' AND b.tech = 'Machinery' CREATE (a)<-[:units_acquired]-(b)"
+
+
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Particle Physics' AND b.tech = 'Particle Physics' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Combustion' AND b.tech = 'Combustion' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Iron Working' AND b.tech = 'Iron Working' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Electricity' AND b.tech = 'Electricity' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Metallurgy' AND b.tech = 'Metallurgy' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Stealth' AND b.tech = 'Stealth' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Refrigeration' AND b.tech = 'Refrigeration' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Telegraph' AND b.tech = 'Telegraph' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Dynamite' AND b.tech = 'Dynamite' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Mathematics' AND b.tech = 'Mathematics' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Electronics' AND b.tech = 'Electronics' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Military Science' AND b.tech = 'Military Science' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Rifling' AND b.tech = 'Rifling' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Nuclear Fusion' AND b.tech = 'Nuclear Fusion' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Steam Power' AND b.tech = 'Steam Power' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Mining' AND b.tech = 'Mining' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Combined Arms' AND b.tech = 'Combined Arms' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Flight' AND b.tech = 'Flight' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Navigation' AND b.tech = 'Navigation' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Rocketry' AND b.tech = 'Rocketry' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Advanced Ballistics' AND b.tech = 'Advanced Ballistics' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Construction' AND b.tech = 'Construction' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Compass' AND b.tech = 'Compass' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Satellites' AND b.tech = 'Satellites' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Nanotechnology' AND b.tech = 'Nanotechnology' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Astronomy' AND b.tech = 'Astronomy' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Gunpowder' AND b.tech = 'Gunpowder' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Steel' AND b.tech = 'Steel' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Archery' AND b.tech = 'Archery' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Sailing' AND b.tech = 'Sailing' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Replaceable Parts' AND b.tech = 'Replaceable Parts' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Industrialization' AND b.tech = 'Industrialization' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Computers' AND b.tech = 'Computers' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Nuclear Fission' AND b.tech = 'Nuclear Fission' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Civil Service' AND b.tech = 'Civil Service' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Animal Husbandry' AND b.tech = 'Animal Husbandry' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Plastics' AND b.tech = 'Plastics' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = '(None)' AND b.tech = '(None)' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Chemistry' AND b.tech = 'Chemistry' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Physics' AND b.tech = 'Physics' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Archaeology' AND b.tech = 'Archaeology' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Chivalry' AND b.tech = 'Chivalry' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Robotics' AND b.tech = 'Robotics' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Ballistics' AND b.tech = 'Ballistics' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Radar' AND b.tech = 'Radar' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Radio' AND b.tech = 'Radio' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Horseback Riding' AND b.tech = 'Horseback Riding' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Lasers' AND b.tech = 'Lasers' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Bronze Working' AND b.tech = 'Bronze Working' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'The Wheel' AND b.tech = 'The Wheel' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Penicillin' AND b.tech = 'Penicillin' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Machinery' AND b.tech = 'Machinery' CREATE (a)-[:tech]->(b)"
+
+
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Naval' AND b.class = 'Naval' CREATE (a)<-[:units_with_class]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Civilian' AND b.class = 'Civilian' CREATE (a)<-[:units_with_class]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Recon' AND b.class = 'Recon' CREATE (a)<-[:units_with_class]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Siege' AND b.class = 'Siege' CREATE (a)<-[:units_with_class]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Standard' AND b.class = 'Standard' CREATE (a)<-[:units_with_class]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Harasser' AND b.class = 'Harasser' CREATE (a)<-[:units_with_class]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Defensive' AND b.class = 'Defensive' CREATE (a)<-[:units_with_class]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Air' AND b.class = 'Air' CREATE (a)<-[:units_with_class]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Trade' AND b.class = 'Trade' CREATE (a)<-[:units_with_class]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Religious' AND b.class = 'Religious' CREATE (a)<-[:units_with_class]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Special' AND b.class = 'Special' CREATE (a)<-[:units_with_class]-(b)"
+
+
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Naval' AND b.class = 'Naval' CREATE (a)-[:class]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Civilian' AND b.class = 'Civilian' CREATE (a)-[:class]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Recon' AND b.class = 'Recon' CREATE (a)-[:class]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Siege' AND b.class = 'Siege' CREATE (a)-[:class]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Standard' AND b.class = 'Standard' CREATE (a)-[:class]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Harasser' AND b.class = 'Harasser' CREATE (a)-[:class]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Defensive' AND b.class = 'Defensive' CREATE (a)-[:class]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Air' AND b.class = 'Air' CREATE (a)-[:class]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Trade' AND b.class = 'Trade' CREATE (a)-[:class]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Religious' AND b.class = 'Religious' CREATE (a)-[:class]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:class) WHERE a.class = 'Special' AND b.class = 'Special' CREATE (a)-[:class]->(b)"
+
+
+
+Neo4j on conn "MATCH (a:unit),(b:type) WHERE a.type = 'Melee' AND b.type = 'Melee' CREATE (a)<-[:units_with_type]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:type) WHERE a.type = 'Ranged' AND b.type = 'Ranged' CREATE (a)<-[:units_with_type]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:type) WHERE a.type = 'Civilian' AND b.type = 'Civilian' CREATE (a)<-[:units_with_type]-(b)"
+
+
+
+Neo4j on conn "MATCH (a:unit),(b:type) WHERE a.type = 'Melee' AND b.type = 'Melee' CREATE (a)-[:type]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:type) WHERE a.type = 'Ranged' AND b.type = 'Ranged' CREATE (a)-[:type]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:type) WHERE a.type = 'Civilian' AND b.type = 'Civilian' CREATE (a)-[:type]->(b)"
+
