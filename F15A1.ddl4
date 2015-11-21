@@ -271,8 +271,11 @@ SELECT
   s.status_text,
   r.rfe_explanation,
   r.rfe_alt_protections,
-  r.rfe_approval_review_date
-FROM F15A1_rfe r join F15A1_Stat_Code s on r.F15A1_Stat_Code_sc = s.SC;
+  r.rfe_approval_review_date,
+  t.task_abreviation
+FROM F15A1_rfe r join F15A1_Stat_Code s on r.F15A1_Stat_Code_sc = s.SC
+  join rfe_task_relationship rtr on r.rfe_id = rtr.F15A1_rfe_rfe_id
+  join F15A1_Task t on rtr.F15A1_Task_task_id = t.task_id;
 
 create or replace TRIGGER F15A1_rfe_view_trigger
   INSTEAD OF insert ON F15A1_rfe_view
@@ -290,5 +293,11 @@ BEGIN
               :NEW.rfe_explanation,
               :NEW.rfe_alt_protections,
               :NEW.rfe_approval_review_date);
+  insert into rfe_task_relationship(
+              F15A1_rfe_rfe_id,
+              F15A1_Task_task_id)
+              VALUES(
+              :NEW.rfe_id,
+              100);
 END;
 /
