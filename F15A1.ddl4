@@ -3,19 +3,19 @@ drop view F15A1_emp_view;
 create view F15A1_emp_view as
 SELECT
   e.emp_id,
+  a.right,
   e.emp_name,
   l.lab_name,
   e.emp_email,
   e.emp_office,
   e.emp_phone,
   e.emp_status,
-  e.emp_system_admin_flag,
-  e.emp_chairperson_flag,
   e.emp_labdir_flag,
   e.emp_chair_flag,
   e.emp_execdir_flag,
   e.emp_admin_flag
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id;
+FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
+  join F15A1_auth a on e.F15A1_Auth_auth_id = a.auth_id;
 
 create or replace TRIGGER F15A1_emp_trigger
   INSTEAD OF insert ON F15A1_emp_view
@@ -27,238 +27,24 @@ BEGIN
               emp_email,
               emp_office,
               emp_phone,
-              emp_system_admin_flag,
-              emp_chairperson_flag,
               emp_labdir_flag,
               emp_chair_flag,
               emp_execdir_flag,
-              emp_admin_flag)
+              emp_admin_flag,
+              F15A1_Lab_lab_id,
+              F15A1_Auth_auth_id)
               VALUES(
               :NEW.emp_id,
               :NEW.emp_name,
               :NEW.emp_email,
               :NEW.emp_office,
               :NEW.emp_phone,
-              :NEW.emp_system_admin_flag,
-              :NEW.emp_chairperson_flag,
               :NEW.emp_labdir_flag,
               :NEW.emp_chair_flag,
               :NEW.emp_execdir_flag,
-              :NEW.emp_admin_flag);
-END;
-/
-
-
-
-drop view F15A1_labdir_view;
-
-create view F15A1_labdir_view as
-SELECT 
-    e.emp_id,
-    e.emp_name,
-    l.lab_name,
-    e.emp_email,
-    e.emp_office,
-    e.emp_phone,
-    e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
-WHERE e.emp_labdir_flag = '1';
-
-create or replace TRIGGER F15A1_labdir_trigger
-  INSTEAD OF insert ON F15A1_labdir_view
-  FOR EACH ROW
-BEGIN
-  insert into F15A1_Emp(
-              emp_id,
-              emp_name,
-              emp_email,
-              emp_office,
-              emp_phone)
-              VALUES(
-              :NEW.emp_id,
-              :NEW.emp_name,
-              :NEW.emp_email,
-              :NEW.emp_office,
-              :NEW.emp_phone);
-END;
-/
-
-
-
-
-drop view F15A1_chair_view;
-
-create view F15A1_chair_view as
-SELECT 
-    e.emp_id,
-    e.emp_name,
-    l.lab_name,
-    e.emp_email,
-    e.emp_office,
-    e.emp_phone,
-    e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
-WHERE e.emp_chair_flag = '1';
-
-create or replace TRIGGER F15A1_chair_trigger
-  INSTEAD OF insert ON F15A1_chair_view
-  FOR EACH ROW
-BEGIN
-  insert into F15A1_Emp(
-              emp_id,
-              emp_name,
-              emp_email,
-              emp_office,
-              emp_phone)
-              VALUES(
-              :NEW.emp_id,
-              :NEW.emp_name,
-              :NEW.emp_email,
-              :NEW.emp_office,
-              :NEW.emp_phone);
-END;
-/
-
-
-
-
-drop view F15A1_execdir_view;
-
-create view F15A1_execdir_view as
-SELECT 
-    e.emp_id,
-    e.emp_name,
-    l.lab_name,
-    e.emp_email,
-    e.emp_office,
-    e.emp_phone,
-    e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
-WHERE e.emp_execdir_flag = '1';
-
-create or replace TRIGGER F15A1_execdir_trigger
-  INSTEAD OF insert ON F15A1_execdir_view
-  FOR EACH ROW
-BEGIN
-  insert into F15A1_Emp(
-              emp_id,
-              emp_name,
-              emp_email,
-              emp_office,
-              emp_phone)
-              VALUES(
-              :NEW.emp_id,
-              :NEW.emp_name,
-              :NEW.emp_email,
-              :NEW.emp_office,
-              :NEW.emp_phone);
-END;
-/
-
-
-
-
-drop view F15A1_admin_view;
-
-create view F15A1_admin_view as
-SELECT 
-    e.emp_id,
-    e.emp_name,
-    l.lab_name,
-    e.emp_email,
-    e.emp_office,
-    e.emp_phone,
-    e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
-WHERE e.emp_admin_flag = '1';
-
-create or replace TRIGGER F15A1_admin_trigger
-  INSTEAD OF insert ON F15A1_admin_view
-  FOR EACH ROW
-BEGIN
-  insert into F15A1_Emp(
-              emp_id,
-              emp_name,
-              emp_email,
-              emp_office,
-              emp_phone)
-              VALUES(
-              :NEW.emp_id,
-              :NEW.emp_name,
-              :NEW.emp_email,
-              :NEW.emp_office,
-              :NEW.emp_phone);
-END;
-/
-
-
-
-
-drop view F15A1_system_admin_view;
-
-create view F15A1_system_admin_view as
-SELECT 
-    e.emp_id,
-    e.emp_name,
-    l.lab_name,
-    e.emp_email,
-    e.emp_office,
-    e.emp_phone,
-    e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
-WHERE e.emp_system_admin_flag = '1';
-
-create or replace TRIGGER F15A1_system_admin_trigger
-  INSTEAD OF insert ON F15A1_system_admin_view
-  FOR EACH ROW
-BEGIN
-  insert into F15A1_Emp(
-              emp_id,
-              emp_name,
-              emp_email,
-              emp_office,
-              emp_phone)
-              VALUES(
-              :NEW.emp_id,
-              :NEW.emp_name,
-              :NEW.emp_email,
-              :NEW.emp_office,
-              :NEW.emp_phone);
-END;
-/
-
-
-
-drop view F15A1_chairperson_view;
-
-create view F15A1_chairperson_view as
-SELECT 
-    e.emp_id,
-    e.emp_name,
-    l.lab_name,
-    e.emp_email,
-    e.emp_office,
-    e.emp_phone,
-    e.emp_status
-FROM F15A1_emp e join F15A1_Lab l on e.F15A1_Lab_lab_id = l.lab_id
-WHERE e.emp_chairperson_flag = '1';
-
-create or replace TRIGGER F15A1_chairperson_trigger
-  INSTEAD OF insert ON F15A1_chairperson_view
-  FOR EACH ROW
-BEGIN
-  insert into F15A1_Emp(
-              emp_id,
-              emp_name,
-              emp_email,
-              emp_office,
-              emp_phone)
-              VALUES(
-              :NEW.emp_id,
-              :NEW.emp_name,
-              :NEW.emp_email,
-              :NEW.emp_office,
-              :NEW.emp_phone);
+              :NEW.emp_admin_flag,
+              nv('P26_LAB_NAME'),
+              nv('P26_RIGHT'));
 END;
 /
 
@@ -268,11 +54,14 @@ drop view F15A1_rfe_view;
 create view F15A1_rfe_view as
 SELECT 
   r.rfe_id,
+  r.F15A1_Stat_Code_sc,
   s.status_text,
   r.rfe_explanation,
   r.rfe_alt_protections,
   r.rfe_approval_review_date,
-  t.task_abreviation
+  t.task_abreviation,
+  t.task_id,
+  rtr.token_pk
 FROM F15A1_rfe r join F15A1_Stat_Code s on r.F15A1_Stat_Code_sc = s.SC
   join rfe_task_relationship rtr on r.rfe_id = rtr.F15A1_rfe_rfe_id
   join F15A1_Task t on rtr.F15A1_Task_task_id = t.task_id;
@@ -280,7 +69,10 @@ FROM F15A1_rfe r join F15A1_Stat_Code s on r.F15A1_Stat_Code_sc = s.SC
 create or replace TRIGGER F15A1_rfe_view_trigger
   INSTEAD OF insert ON F15A1_rfe_view
   FOR EACH ROW
+  DECLARE
+    rid NUMBER;
 BEGIN
+  rid := F15A1_rfe_seq.nextval;
   insert into F15A1_rfe(
               rfe_id,
               F15A1_Stat_Code_sc,
@@ -288,16 +80,51 @@ BEGIN
               rfe_alt_protections,
               rfe_approval_review_date)
               VALUES(
-              :NEW.rfe_id,
-              100,
+              --:NEW.rfe_id,
+              rid,
+              --:NEW.F15A1_Stat_Code_SC,
+              nv('P21_STATUS_TEXT'),
               :NEW.rfe_explanation,
               :NEW.rfe_alt_protections,
               :NEW.rfe_approval_review_date);
+--  insert into rfe_task_relationship(
+--              token_pk,
+--              F15A1_rfe_rfe_id,
+--              F15A1_Task_task_id)
+--              VALUES(
+--              :NEW.token_pk,
+--              --:NEW.rfe_id,
+--              rid,
+--              --:NEW.task_id
+--              nv('P21_TASK_ABREVIATION'));
+END;
+/
+
+create or replace TRIGGER F15A1_test
+  AFTER insert ON F15A1_rfe
+  FOR EACH ROW
+BEGIN
   insert into rfe_task_relationship(
+              token_pk,
               F15A1_rfe_rfe_id,
               F15A1_Task_task_id)
               VALUES(
+              1  -- Won't actually set 1, other trigger will put in correct new primary key
               :NEW.rfe_id,
-              100);
+              nv('P21_TASK_ABREVIATION'));
+  insert into F15A1_contact(
+              contact_id)
+              --F15A1_emp_emp_id,
+              --F15A1_rfe_rfe_id,
+              --contact_effective_date,
+              --contact_comment,
+              --F15A1_rtc_role_code_id)
+              VALUES(
+              1);
+              --:P1_EMPLOYEE,
+              --:NEW.rfe_id,
+              --SYSDATE(),
+              --'Requester',
+              --100);
 END;
 /

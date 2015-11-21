@@ -1,0 +1,47 @@
+ALTER TRIGGER F15A1_Stat_Code_PK_trig DISABLE;
+ALTER TRIGGER F15A1_Task_PK_trig DISABLE;
+ALTER TRIGGER F15A1_Lab_PK_trig DISABLE;
+ALTER TRIGGER F15A1_Auth_PK_trig DISABLE;
+
+
+TRUNCATE TABLE F15A1_Comment;
+TRUNCATE TABLE rfe_task_relationship;
+TRUNCATE TABLE F15A1_doc;
+TRUNCATE TABLE F15A1_hist;
+TRUNCATE TABLE F15A1_Contact;
+TRUNCATE TABLE F15A1_emp;
+TRUNCATE TABLE F15A1_Task;
+TRUNCATE TABLE F15A1_rfe;
+TRUNCATE TABLE F15A1_Stat_Code;
+TRUNCATE TABLE F15A1_rtc;
+TRUNCATE TABLE F15A1_Lab;
+TRUNCATE TABLE F15A1_Auth;
+
+
+INSERT ALL
+  INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES (1, 'S1', 'Status 1')
+  INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES (2, 'S2', 'Status 2')
+  SELECT * from dual;
+  
+INSERT ALL
+  INTO F15A1_Task (task_id, task_effective_date, task_abreviation, task_description) VALUES (1, TO_DATE('2015/11/01', 'yyyy/mm/dd'), 'T1', 'Task 1')
+  INTO F15A1_Task (task_id, task_effective_date, task_abreviation, task_description) VALUES (2, TO_DATE('2015/11/02', 'yyyy/mm/dd'), 'T1', 'Task 2')
+  SELECT * from dual;
+      
+INSERT ALL
+  INTO F15A1_Lab (lab_id, lab_name) VALUES(1, 'Lab 1')
+  INTO F15A1_Lab (lab_id, lab_name) VALUES(2, 'Lab 2')
+  SELECT * from dual;
+
+INSERT ALL
+  INTO F15A1_Auth (auth_id, right) VALUES(1, 'All')
+  INTO F15A1_Auth (auth_id, right) VALUES(2, 'None')
+  SELECT * from dual;
+
+
+
+
+ALTER TRIGGER F15A1_Stat_Code_PK_trig ENABLE;
+ALTER TRIGGER F15A1_Task_PK_trig ENABLE;
+ALTER TRIGGER F15A1_Lab_PK_trig ENABLE;
+ALTER TRIGGER F15A1_Auth_PK_trig ENABLE;

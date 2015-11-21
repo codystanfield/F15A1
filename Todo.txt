@@ -1,0 +1,44 @@
+RFE view does not display tasks yet
+
+Audit data contains Created By
+
+
+Displaying all RFEs, need to look up auth
+
+Need to be able to change status on RFE
+
+RFE, button to go to tasks
+
+
+DML file
+
+
+
+Make emp flags check marks on view
+
+
+Two chairs in employee?
+
+
+Remove frontend that shouldn't be accessible
+
+
+Change STATUS to active/inactive, make it a check box
+
+
+
+
+Requestor
+
+
+
+
+RFE: change to only view if you can
+
+
+Restrict editing of RFEs
+
+
+
+
+Test creating RFE with no task

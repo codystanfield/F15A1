@@ -1,0 +1,204 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="33B563A5-BF7D-799F-9ACF-C2908F0C5A65" name="F15A1_emp">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>F33E2467-7AAE-4BAC-D96E-2526522D0BE2</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="emp_id" id="ED9C8A81-2314-41AC-40EB-4FB5689B2C88">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>9826B455-3171-A723-0384-F3F15EE00B5E</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15A1_Lab_lab_id" id="9DC9801A-490A-AAA2-8E44-FC206281186D">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>FC177F72-93FD-FC4B-672C-408D6F1165D1</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FF77EE14-5B40-156B-6A86-AFA6538A175F" referredColumn="867DD5C7-D41F-7C59-A3F1-DEAFE16F3F61"/>
+</associations>
+</Column>
+<Column name="emp_name" id="2E508D43-8366-6CD8-6E52-F3C8FC4DAF8B">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>CAFB493B-A212-F205-DCF9-CDD386C72548</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_email" id="686D56BB-E15B-9586-8172-B4706EFB8DC3">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>23F69B6D-87D2-F1DB-5DFE-3CF7DDDA0F12</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_office" id="CD9330E2-908D-58BC-FA52-5FEA58C6D8F0">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>506A3AA9-FF6D-1694-C94A-044E99EB76B5</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_phone" id="177B4B11-3FA4-90EC-4623-13FED534ABBB">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>25A700A1-A955-9207-2BDD-8D9F49B9A0C9</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_status" id="B0A8F5FD-05E5-604C-3CCB-9F6D01D955D7">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>550038C6-99FD-1FC8-971A-58AF2C2D6523</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15A1_Auth_auth_id" id="D3CC81C3-0FD6-9244-8201-54A87962C107">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>7FE39D54-F088-0345-8AF3-85AF38E4F890</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="549D886C-DD33-BA0E-5CD7-5EF421AE0BC3" referredColumn="DA1C0E13-F10C-281B-4AF0-51AA731B70AD"/>
+</associations>
+</Column>
+<Column name="emp_labdir_flag" id="C3B72E9B-A970-3029-E2E1-E7CCFA854835">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:09:33 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_chair_flag" id="AD76FBAC-23A5-A296-BBF3-D4885AE20C6B">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:09:33 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_execdir_flag" id="04B10522-6B5C-DFAD-4C98-80EB15EFCC1D">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:09:33 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="emp_admin_flag" id="6B2C0E2B-AA30-E5B1-1A9B-5BD0091F9238">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:09:33 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B519D1AA-3CB6-F13A-C39E-3DBF22B2088C" name="F15A1_emp_PK">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>9A8C4645-C2D3-8F94-92D1-1B86F16CB994</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ED9C8A81-2314-41AC-40EB-4FB5689B2C88"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5ED23955-34C5-FDA2-4A79-CAA4B327E427" name="F15A1_emp_F15A1_Auth_FK">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>CB06D391-C453-DED1-D930-7B729770DBC1</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3CC81C3-0FD6-9244-8201-54A87962C107"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8D01E99-2A6F-FCD1-43B5-3AA0E69C29F5" name="F15A1_emp_F15A1_Lab_FK">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>E416C562-B7BB-78CF-3CFD-44091CED3320</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9DC9801A-490A-AAA2-8E44-FC206281186D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

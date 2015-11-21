@@ -4,7 +4,7 @@
 <createdTime>2015-11-02 22:35:49 UTC</createdTime>
 <ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
 <engineerTo>
-<item key="E8EEAFD3-9953-FD85-3B99-D54FFCF53094" value="true"/>
+<item key="E8950709-0E94-8D3E-7999-80DD6568F8D2" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2015-11-02 22:35:57 UTC</createdTime>
 <ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
 <engineerTo>
-<item key="E8EEAFD3-9953-FD85-3B99-D54FFCF53094" value="true"/>
+<item key="E8950709-0E94-8D3E-7999-80DD6568F8D2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,7 +33,7 @@
 <generatorID>1694C51C-017E-F2F8-36F3-83A38F1104A9</generatorID>
 <ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
 <engineerTo>
-<item key="E8EEAFD3-9953-FD85-3B99-D54FFCF53094" value="true"/>
+<item key="E8950709-0E94-8D3E-7999-80DD6568F8D2" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>96ED1113-A95F-2697-0573-6F3A7FC26F18</referedAttribute>
@@ -42,6 +42,89 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="filename" id="CEB83207-7E36-B8D1-F65A-93216C88A541">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:04:36 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="E8950709-0E94-8D3E-7999-80DD6568F8D2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="file_mimetype" id="0DF2C58E-3742-A6C3-BB3D-C05AFCC182DE">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:05:24 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="E8950709-0E94-8D3E-7999-80DD6568F8D2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>512</dataTypeSize>
+<ownDataTypeParameters>512,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="file_charset" id="3A2717A2-2240-6B25-82F8-1A4B093CF2D1">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:05:38 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="E8950709-0E94-8D3E-7999-80DD6568F8D2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>512</dataTypeSize>
+<ownDataTypeParameters>512,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="file_blob" id="D4A7232F-2CCD-B916-D606-A534B4969E50">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:05:47 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="E8950709-0E94-8D3E-7999-80DD6568F8D2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="file_comments" id="A1038F60-C0CF-28A3-7D2D-58720767AFF2">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:05:54 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="E8950709-0E94-8D3E-7999-80DD6568F8D2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tags" id="7C818704-B65D-B911-DCB0-C83B60476784">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:06:04 UTC</createdTime>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<engineerTo>
+<item key="E8950709-0E94-8D3E-7999-80DD6568F8D2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="7B430BF5-4834-86AE-4E5A-589ABDC48214" name="F15A1_doc PK">
@@ -49,7 +132,7 @@
 <createdTime>2015-11-02 22:36:01 UTC</createdTime>
 <ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
 <engineerTo>
-<item key="E8EEAFD3-9953-FD85-3B99-D54FFCF53094" value="true"/>
+<item key="E8950709-0E94-8D3E-7999-80DD6568F8D2" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

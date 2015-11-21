@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9175D287-877C-55BF-5E34-68030B2F7B19" name="F15A1_rfe">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>04996B05-DC50-A490-0580-9B5D29B70D0A</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="rfe_id" id="52D986E5-6253-D93A-373E-897483F7FD77">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>96ED1113-A95F-2697-0573-6F3A7FC26F18</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15A1_Stat_Code_SC" id="3C60DA89-20E3-83E0-1336-9E759748D960">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>53270AE0-65B1-7A34-4A51-581A2D4438F0</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="468E7E44-CA81-12BC-0EEB-699400BF8CEE" referredColumn="5D2D7099-3752-3976-F962-4BE3D497EB72"/>
+</associations>
+</Column>
+<Column name="rfe_explanation" id="91447B9D-9F6E-EB3C-8C80-8FA288D68D55">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>59C5C9B9-072E-1AC5-1325-ECAA35A9032D</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rfe_alt_protections" id="C9B7456B-D409-F80E-D1F0-3EE35C5F070E">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>42C0292C-95ED-2141-F4A2-76483F32B3C9</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rfe_approval_review_date" id="72DF8130-DD5A-CE07-6EF7-1F44C5FDA8A0">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>5B76E11E-DC27-254E-F3BB-34D1B5D07DB2</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="05212B02-D22E-D06C-1E2F-583FD36889E6" name="F15A1_rfe_PK">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>97DC3F88-EC91-851D-61CC-27B772A29DD0</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="52D986E5-6253-D93A-373E-897483F7FD77"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F441806E-45C4-ED7E-1076-09A76CE27515" name="F15A1_rfe_F15A1_Stat_Code_FK">
+<createdBy>cody</createdBy>
+<createdTime>2015-11-21 20:08:16 UTC</createdTime>
+<generatorID>B858DC7A-040A-A65A-92A0-E79B0C7EC301</generatorID>
+<ownerDesignName>F15A1 Conceptual Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3C60DA89-20E3-83E0-1336-9E759748D960"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
