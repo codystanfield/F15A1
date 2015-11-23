@@ -1,0 +1,59 @@
+# Change the followin oracle account id and password to your oracle account id and password. Also, change A0 to your group's number but don't use F15 because it will make some internal names be too long.
+conn = connectTo 'jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl' 'C##cs347_bwc534' 'orcl_bwc534' 'rdf_mode' 'A1';
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Warrior', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'None', COST : '40.0', MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Settler', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Civilian', TECH : 'None', COST : '106.0', MOVES : '2.0', NOTES : 'Can Found Cities. City growth suspended during production'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Worker', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Civilian', TECH : 'None', COST : '70.0', MOVES : '2.0', NOTES : 'Can build tile improvements'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Scout', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Recon', TECH : 'None', COST : '25.0', MOVES : '2.0', NOTES : 'Ignores terrain cost'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Archer', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Archery', COST : '40.0', MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Spearman', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'BronzeWorking', COST : '56.0', MOVES : '2.0', NOTES : 'Gains plus 50 percent bonus vs. Mounted'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Chariot Archer', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Harasser', TECH : 'Wheel', COST : '56.0', MOVES : '4.0', NOTES : 'Rough terrain penalty, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Trireme', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'Sailing', COST : '56.0', MOVES : '4.0', NOTES : 'Cannot enter deep ocean'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Work Boat', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Civilian', TECH : 'Sailing', COST : '30.0', MOVES : '4.0', NOTES : 'Can build Fishing Boats and Offshore Platform'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great General', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'None', COST : 'None', MOVES : '2.0', NOTES : 'Has plus 25 percent bonus to nearby units; can build Citadel'})"
+
+
+
+Neo4j on conn "CREATE (:tech { TECH_NAME : 'Archery', ERA: 'Ancient'})"
+
+Neo4j on conn "CREATE (:tech { TECH_NAME : 'None', ERA: 'Ancient'})"
+
+Neo4j on conn "CREATE (:tech { TECH_NAME : 'Wheel', ERA: 'Ancient'})"
+
+Neo4j on conn "CREATE (:tech { TECH_NAME : 'Sailing', ERA: 'Ancient'})"
+
+Neo4j on conn "CREATE (:tech { TECH_NAME : 'BronzeWorking', ERA: 'Ancient'})"
+
+
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Archery' AND b.tech = 'Archery' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'None' AND b.tech = 'None' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Wheel' AND b.tech = 'Wheel' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Sailing' AND b.tech = 'Sailing' CREATE (a)<-[:units_acquired]-(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'BronzeWorking' AND b.tech = 'BronzeWorking' CREATE (a)<-[:units_acquired]-(b)"
+
+
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Archery' AND b.tech = 'Archery' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'None' AND b.tech = 'None' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Wheel' AND b.tech = 'Wheel' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'Sailing' AND b.tech = 'Sailing' CREATE (a)-[:tech]->(b)"
+
+Neo4j on conn "MATCH (a:unit),(b:tech) WHERE a.tech = 'BronzeWorking' AND b.tech = 'BronzeWorking' CREATE (a)-[:tech]->(b)"
+
