@@ -1,0 +1,297 @@
+# Change the followin oracle account id and password to your oracle account id and password. Also, change A0 to your group's number but don't use F15 because it will make some internal names be too long.
+conn = connectTo 'jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl' 'C##cs347_bwc534' 'orcl_bwc534' 'rdf_mode' 'A1';
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Warrior', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'None', COST : 40, MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Settler', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Civilian', TECH : 'None', COST : 106, MOVES : '2.0', NOTES : 'Can Found Cities. City growth suspended during production'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Worker', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Civilian', TECH : 'None', COST : 70, MOVES : '2.0', NOTES : 'Can build tile improvements'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Scout', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Recon', TECH : 'None', COST : 25, MOVES : '2.0', NOTES : 'Ignores terrain cost'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Archer', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Archery', COST : 40, MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Spearman', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Bronze Working', COST : 56, MOVES : '2.0', NOTES : 'Gains plus 50 percent bonus vs. Mounted'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Chariot Archer', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Harasser', TECH : 'The Wheel', COST : 56, MOVES : '4.0', NOTES : 'Rough terrain penalty, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Trireme', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'Sailing', COST : 56, MOVES : '4.0', NOTES : 'Cannot enter deep ocean'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Work Boat', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Civilian', TECH : 'Sailing', COST : 30, MOVES : '4.0', NOTES : 'Can build Fishing Boats and Offshore Platform'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great General', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'None', COST : -1, MOVES : '2.0', NOTES : 'Has plus 25 percent bonus to nearby units; can build Citadel'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great Scientist', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'None', COST : -1, MOVES : '2.0', NOTES : 'Can build Academy'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great Engineer', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'None', COST : -1, MOVES : '2.0', NOTES : 'Can build Manufactory'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great Merchant', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'None', COST : -1, MOVES : '2.0', NOTES : 'Can build Customs House'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great Artist', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'None', COST : -1, MOVES : '2.0', NOTES : 'Create Great Work, Trigger Golden Age'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great Writer', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'None', COST : -1, MOVES : '2.0', NOTES : 'Create Great Work, Create Political Treatise'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great Musician', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'None', COST : -1, MOVES : '2.0', NOTES : 'Create Great Work, Concert Tour'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great Prophet', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Religious', TECH : 'None', COST : -1, MOVES : '2.0', NOTES : 'Found Religion, Spread Religion, Build Holy Site'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great Admiral', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Naval', TECH : 'None', COST : -1, MOVES : '4.0', NOTES : 'Gives plus 15 percent combat bonus, can heal nearby naval units'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Caravan', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Trade', TECH : 'Animal Husbandry', COST : 75, MOVES : '1.0', NOTES : 'Establish Trade Route, Limited Visibility'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Cargo Ship', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Trade', TECH : 'Sailing', COST : 100, MOVES : '1.0', NOTES : 'Establish Trade Route, Limited Visibility'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Merchant of Venice', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'None', COST : -1, MOVES : '2.0', NOTES : 'Trade Mission Bonus'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Missionary', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Religious', TECH : 'None', COST : 200, MOVES : '4.0', NOTES : 'Spread Religion'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Inquisitor', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Religious', TECH : 'None', COST : 200, MOVES : '3.0', NOTES : 'Remove Heresy'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Pathfinder', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Recon', TECH : 'None', COST : 45, MOVES : '2.0', NOTES : 'Shoshone UU; Native Tongue, ignores terrain cost'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Khan', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'None', COST : -1, MOVES : '5.0', NOTES : 'Mongolian UU; Heals adjacent units.'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Brute', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'None', COST : 20, MOVES : '2.0', NOTES : 'Barbarian UU'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Galley', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'None', COST : 50, MOVES : '3.0', NOTES : 'Barbarian UU; Cannot enter deep ocean'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Hand-Axe', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'None', COST : 56, MOVES : '2.0', NOTES : 'Barbarian UU; may not melee attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Bowman', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Archery', COST : 40, MOVES : '2.0', NOTES : 'Babylonian UU;'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'War Chariot', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Harasser', TECH : 'The Wheel', COST : 56, MOVES : '5.0', NOTES : 'Egyptian UU; no defensive bonuses, rough terrain penalty'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Hoplite', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Bronze Working', COST : 56, MOVES : '2.0', NOTES : 'Greek UU; plus 100 percent vs Mounted'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Phalanx', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Mining', COST : 56, MOVES : '2.0', NOTES : 'Sumerian UU; plus 100 percent vs Mounted'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Heavy Chariot', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Harasser', TECH : 'The Wheel', COST : 100, MOVES : '3.0', NOTES : 'Hittite UU; Shock I'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Immortal', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Bronze Working', COST : 56, MOVES : '2.0', NOTES : 'Persian UU; plus 100 percent vs Mounted, heals at double rate'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Jaguar', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'None', COST : 40, MOVES : '2.0', NOTES : 'Aztec UU; plus 50 percent combat strength in Jungle, heals plus 2 on kill, Woodsman'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'War Elephant', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Harasser', TECH : 'The Wheel', COST : 70, MOVES : '3.0', NOTES : 'Indian UU, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Slinger', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Archery', COST : 40, MOVES : '2.0', NOTES : 'Inca UU; Withdraw Before Melee'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Maori Warrior', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'None', COST : 40, MOVES : '2.0', NOTES : 'Polyneisan UU; Reduces enemy strength 10 percent'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Atlatlist', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Archery', COST : 36, MOVES : '2.0', NOTES : 'Mayan UU; May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Pictish Warrior', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Bronze Working', COST : 56, MOVES : '2.0', NOTES : 'Celtic UU; plus Faith per kill, free pillage, 20 percent Foreign Lands Bonus,'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Battering Ram', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Siege', TECH : 'Bronze Working', COST : 75, MOVES : '2.0', NOTES : 'Hun UU; plus 300 percent vs cities, -1 sight, -33 percent on defense, Cover I, City Attack Only, No Defense Bonus'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Horse Archer', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Harasser', TECH : 'The Wheel', COST : 56, MOVES : '4.0', NOTES : 'Hun UU; Accuracy I'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Quinquereme', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'Sailing', COST : 45, MOVES : '4.0', NOTES : 'Carthage UU; coast only'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Dromon', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Naval', TECH : 'Sailing', COST : 56, MOVES : '4.0', NOTES : 'Byzantine UU; plus 50 percent vs naval, coast only'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Siege Tower', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Siege', TECH : 'Mathematics', COST : 75, MOVES : '2.0', NOTES : 'Assyrian UU; Sapper, plus 200 percent vs Cities, Cover I, plus 1 Sight, City attack only'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'African Forest Elephant', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Horseback Riding', COST : 100, MOVES : '3.0', NOTES : 'Carthage UU; Feared Elephant, Great Generals II, Can Move After Attacking, -33 percent vs. Cities, No Defensive Bonus'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Swordsman', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Iron Working', COST : 75, MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Horseman', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Horseback Riding', COST : 75, MOVES : '4.0', NOTES : 'Can move after attacking, no defensive bonuses, -33 percent vs cities'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Composite Bowman', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Construction', COST : 75, MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Catapult', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Siege', TECH : 'Mathematics', COST : 75, MOVES : '2.0', NOTES : 'Must set up to fire; plus 200 percent vs Cities, -1 vision, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Companion Cavalry', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Horseback Riding', COST : 75, MOVES : '5.0', NOTES : 'Greek UU; can move after attack, Great Generals I, no defensive bonuses, -33 percent vs. Cities'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Legion', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Iron Working', COST : 75, MOVES : '2.0', NOTES : 'Roman UU; Can build forts and roads.'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Ballista', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Siege', TECH : 'Mathematics', COST : 75, MOVES : '2.0', NOTES : 'Roman UU; Must set up to fire; plus 200 percent vs Cities, -1 vision, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Cataphract', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Horseback Riding', COST : 75, MOVES : '3.0', NOTES : 'Byzantine UU; Can Move After Attacking, -25 percent vs. Cities'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Mohawk Warrior', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Iron Working', COST : 75, MOVES : '2.0', NOTES : 'Iroquois UU; plus 50 percent combat strength in Forest/Jungle'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Kris Swordsman', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Iron Working', COST : 75, MOVES : '2.0', NOTES : 'Indonesian UU; Mystic Blade'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Pikeman', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Civil Service', COST : 90, MOVES : '2.0', NOTES : 'Has plus 100 percent bonus vs. Mounted'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Crossbowman', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Machinery', COST : 120, MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Longswordsman', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Steel', COST : 120, MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Knight', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Chivalry', COST : 120, MOVES : '4.0', NOTES : 'Can move after attacking, no defensive bonuses, -33 percent vs. Cities'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Trebuchet', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Siege', TECH : 'Physics', COST : 120, MOVES : '2.0', NOTES : 'Must set up to fire; plus 200 percent vs Cities, -1 vision, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Landsknecht', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Special', TECH : 'Civil Service', COST : 45, MOVES : '2.0', NOTES : 'Has plus 50 percent vs Mounted, Free Pillage, Double Plunder, Can only be acquired through Commerce'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Mandekalu Cavalry', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Chivalry', COST : 120, MOVES : '4.0', NOTES : 'Songhai UU; can move after attacking, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Camel Archer', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Harasser', TECH : 'Chivalry', COST : 120, MOVES : '4.0', NOTES : 'Arab UU; Can Move After Attacking, no defensive bonsues'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Keshik', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Harasser', TECH : 'Chivalry', COST : 165, MOVES : '5.0', NOTES : 'Mongolian UU; Great Generals I, Quick Study, can move after attacking, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Samurai', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Steel', COST : 120, MOVES : '2.0', NOTES : 'Japanese UU; Shock I; Great Generals II; Can build Fishing Boats'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Longbowman', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Machinery', COST : 120, MOVES : '2.0', NOTES : 'English UU; May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Chu-Ko-Nu', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Machinery', COST : 120, MOVES : '2.0', NOTES : 'Chinese UU; May Attack Twice'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Naresuans Elephant', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Defensive', TECH : 'Chivalry', COST : 120, MOVES : '3.0', NOTES : 'Siamese UU; plus 50 percent vs Mounted, can move after attacking, no defensive bonuses, -33 percent vs. Cities'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Berserker', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Steel', COST : 120, MOVES : '3.0', NOTES : 'Denmark UU; Amphibious'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Conquistador', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Chivalry', COST : 120, MOVES : '4.0', NOTES : 'Spanish UU; no penalty vs. cities; plus 2 sight; Embarkation With Defense; can found cities'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Hwacha', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Siege', TECH : 'Physics', COST : 120, MOVES : '2.0', NOTES : 'Korean UU; Must Set Up, No Defensive Bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Huscarl', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Steel', COST : 110, MOVES : '2.0', NOTES : 'Anglo Saxon UU; plus 50 percent vs. Mounted, Cover I'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Galleass', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Naval', TECH : 'Compass', COST : 100, MOVES : '3.0', NOTES : 'Cannot Enter Deep Ocean'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Impi', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Civil Service', COST : 90, MOVES : '2.0', NOTES : 'Zulu UU; Spear Throw, plus 50 percent vs Mounted'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great Galleass', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Compass', COST : 110, MOVES : '3.0', NOTES : 'Venetian UU; cannot enter deep ocean'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Musketman', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Gunpowder', COST : 150, MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Lancer', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Metallurgy', COST : 185, MOVES : '4.0', NOTES : 'Formation I, Can move after attacking'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Cannon', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Siege', TECH : 'Chemistry', COST : 185, MOVES : '2.0', NOTES : 'Must set up to fire; plus 200 percent vs Cities, -1 vision, no defensive bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Caravel', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Recon', TECH : 'Astronomy', COST : 120, MOVES : '4.0', NOTES : 'Has plus 1 Sight, Withdraw Before Melee'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Musketeer', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Gunpowder', COST : 150, MOVES : '2.0', NOTES : 'French UU'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Minuteman', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Gunpowder', COST : 150, MOVES : '2.0', NOTES : 'American UU; ignores terrain cost, Drill I'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Tercio', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Gunpowder', COST : 155, MOVES : '2.0', NOTES : 'Spanish UU; plus 50 percent vs Mounted'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Turtle Ship', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'Astronomy', COST : 120, MOVES : '4.0', NOTES : 'Korean UU; Cannot Enter Deep Ocean'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Frigate', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Naval', TECH : 'Navigation', COST : 185, MOVES : '5.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Ship of the Line', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Naval', TECH : 'Navigation', COST : 170, MOVES : '7.0', NOTES : 'English UU; plus 1 sight range'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Privateer', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'Navigation', COST : 150, MOVES : '5.0', NOTES : 'Coastal Raider I, Prize Ships'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Sea Beggar', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'Navigation', COST : 150, MOVES : '5.0', NOTES : 'Dutch UU; Prize Ships, Coastal Raider II, Supply'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Hakkapeliitta', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Metallurgy', COST : 185, MOVES : '4.0', NOTES : 'Swedish UU; Formation I, plus 15 percent bonus when stacked with General, Can Move After Attacking, Transfer Movement to General'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Sipahi', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Metallurgy', COST : 185, MOVES : '5.0', NOTES : 'Ottoman UU Formation I, plus 1 sight range, Can Move After Attacking, Free Pillage'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Janissary', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Gunpowder', COST : 150, MOVES : '2.0', NOTES : 'Ottoman UU; plus 25 percent strength when attacking; heals plus 50 if enemy destroyed'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Nau', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'Astronomy', COST : 120, MOVES : '5.0', NOTES : 'Portguese UU; Exotic Cargo, plus 1 Sight, Withdraw Before Melee'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Winged Hussar', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Metallurgy', COST : 185, MOVES : '5.0', NOTES : 'Polish UU; Heavy Charge, Shock I, Formation I, -33 percent vs Cities, no def. bonus, move after attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Archaeologist', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Civilian', TECH : 'Archaeology', COST : 200, MOVES : '4.0', NOTES : 'Construct Archaeological Dig; requires University'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Rifleman', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Rifling', COST : 225, MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Cavalry', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Military Science', COST : 225, MOVES : '4.0', NOTES : 'Can Move After Attacking, -33 percent vs Cities, No Defensive Bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Ironclad', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'Steam Power', COST : 270, MOVES : '3.0', NOTES : 'Has plus 33 percent vs Cities, Double Movement in Coast'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Gatling Gun', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Industrialization', COST : 225, MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Cossack', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Military Science', COST : 225, MOVES : '4.0', NOTES : 'Russian UU; can move after attacking, plus 33 percent vs damaged units, -33 percent vs Cities, No Defensive Bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Carolean', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Rifling', COST : 225, MOVES : '2.0', NOTES : 'Swedish UU; March'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Norwegian Ski Infantry', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Rifling', COST : 220, MOVES : '2.0', NOTES : 'Denmark UU; bonuses on hills, snow, tundra'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Hussar', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Military Science', COST : 225, MOVES : '5.0', NOTES : 'Austrian UU; plus 1 Sight, plus 50 percent Flanking, Can Move After Attacking, -33 percent vs cities, No Defensive Bonses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Mehal Sefari', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Rifling', COST : 200, MOVES : '2.0', NOTES : 'Ethiopian UU; Drill I, Near Capital Bonus'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Berber Cavalry', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Military Science', COST : 225, MOVES : '4.0', NOTES : 'Moroccan UU; bonus in Desert and friendly territory'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Comanche Riders', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Military Science', COST : 200, MOVES : '4.0', NOTES : 'Shoshone UU; plus 1 Move'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Machine Gun', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Ballistics', COST : 350, MOVES : '2.0', NOTES : 'May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Triplane', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Air', TECH : 'Flight', COST : 325, MOVES : 'None', NOTES : 'Interception (50), Air Sweep, Air Recon, plus 150 percent vs Bombers and Helicopters'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great War Bomber', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Air', TECH : 'Flight', COST : 325, MOVES : 'None', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Great War Infantry', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Replaceable Parts', COST : 320, MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Landship', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Combustion', COST : 350, MOVES : '4.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Infantry', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Plastics', COST : 320, MOVES : '2.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Artillery', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Siege', TECH : 'Dynamite', COST : 250, MOVES : '2.0', NOTES : 'Must set up to fire; plus 200 percent vs Cities, -1 vision, no defensive bonuses, Indirect Fire'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Destroyer', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'Electricity', COST : 375, MOVES : '6.0', NOTES : 'Has plus 3 sight range, plus 100 percent vs Submarines, Intercept, Indirect Fire'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Battleship', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Naval', TECH : 'Telegraph', COST : 375, MOVES : '3.0', NOTES : 'Indirect Fire'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Submarine', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Naval', TECH : 'Refrigeration', COST : 375, MOVES : '5.0', NOTES : 'Invisible, Can See Submarines, May Enter Ice Tiles, plus 100 on attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Foreign Legion', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Replaceable Parts', COST : 320, MOVES : '2.0', NOTES : 'Foreign Lands plus 20 percent Bonus'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Anti-Tank Gun', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Combined Arms', COST : 270, MOVES : '2.0', NOTES : 'Has plus 100 percent vs. Armor'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Anti-Aircraft Gun', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Radio', COST : 375, MOVES : '2.0', NOTES : 'Interception(100), plus 150 percent vs. bombers & helicopters'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Pracinha', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Plastics', COST : 375, MOVES : '2.0', NOTES : 'Brazilian UU; Golden Age from Victories'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Tank', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Combustion', COST : 375, MOVES : '5.0', NOTES : 'Can move after attack, No Defensive Bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Fighter', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Air', TECH : 'Flight', COST : 375, MOVES : 'None', NOTES : 'Interception(100), Air Sweep, Recon, plus 150 percent vs Bombers & Helicopters'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Bomber', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Air', TECH : 'Radar', COST : 375, MOVES : 'None', NOTES : 'Vulnerable to Fighters'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Carrier', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Naval', TECH : 'Flight', COST : 375, MOVES : '5.0', NOTES : 'Can carry 3 aircraft, May Not Melee Attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Marine', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Penicillin', COST : 400, MOVES : '2.0', NOTES : 'Amphibious, plus 1 Sight When Embarked, Double Embarked Defense'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Paratrooper', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Radar', COST : 375, MOVES : '2.0', NOTES : 'May Paradrop up to 5 hexes'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Panzer', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Combustion', COST : 375, MOVES : '6.0', NOTES : 'German UU; can move after attack, No Defensive Bonuses'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Zero', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Air', TECH : 'Flight', COST : 375, MOVES : 'None', NOTES : 'Japanese UU; Interception(100), plus 33 percent vs Fighters, Recon, Air Sweep, plus 150 vs Bombers & Helicopters'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'B-17', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Air', TECH : 'Radar', COST : 375, MOVES : 'None', NOTES : 'American UU; Evasion, Melee 1'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Atomic Bomb', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Special', TECH : 'Nuclear Fission', COST : 600, MOVES : 'None', NOTES : 'Evasion(50)'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Bazooka', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Standard', TECH : 'Nuclear Fission', COST : 375, MOVES : '2.0', NOTES : 'May not melee attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Helicopter Gunship', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Rocketry', COST : 425, MOVES : '6.0', NOTES : 'All Tile Cost 1, Hovering Unit, plus 100 vs Tanks, No Defensive Bonuses, Cannot Capture Cities'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Rocket Artillery', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Siege', TECH : 'Rocketry', COST : 425, MOVES : '3.0', NOTES : 'Must set up to fire; plus 200 percent vs Cities, -1 vision, no defensive bonuses, Indirect Fire'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Mobile SAM', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Defensive', TECH : 'Computers', COST : 425, MOVES : '3.0', NOTES : 'Interception(100), plus 150 percent vs. Air'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Jet Fighter', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Air', TECH : 'Lasers', COST : 425, MOVES : 'None', NOTES : 'Interception(100), Recon, Air Sweep, plus 150 vs Bombers & Helicopters'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Modern Armor', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Lasers', COST : 425, MOVES : '5.0', NOTES : 'No Defensive Bonuses, Can move after attack'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Mechanized Infantry', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Electronics', COST : 375, MOVES : '4.0', NOTES : ''})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Stealth Bomber', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Air', TECH : 'Stealth', COST : 425, MOVES : 'None', NOTES : 'Evasion(100), Recon'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Nuclear Missile', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Special', TECH : 'Advanced Ballistics', COST : 1000, MOVES : 'None', NOTES : 'Evasion(50)'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Guided Missile', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Special', TECH : 'Satellites', COST : 150, MOVES : 'None', NOTES : 'Destroyed on attack; Evasion(100)'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Nuclear Submarine', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Naval', TECH : 'Computers', COST : 425, MOVES : '6.0', NOTES : 'Can carry 2 missiles; plus 100 vs submarines; invisible, Can See Submarines, May Enter Ice Tiles'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Missile Cruiser', UNIT_TYPE : 'Ranged', UNIT_CLASS : 'Naval', TECH : 'Robotics', COST : 425, MOVES : '7.0', NOTES : 'Can See Submarines, plus 100 vs Submarines, Can Carry 3 Cargo, Interception(100)'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'XCOM Squad', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Standard', TECH : 'Nanotechnology', COST : 400, MOVES : '2.0', NOTES : 'Skyranger (40 drop range)'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'Giant Death Robot', UNIT_TYPE : 'Melee', UNIT_CLASS : 'Harasser', TECH : 'Nuclear Fusion', COST : 425, MOVES : '5.0', NOTES : 'no defensive bonuses, can move after attacking.'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'SS Booster', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'Robotics', COST : 750, MOVES : '2.0', NOTES : 'Starship component; 3 required'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'SS Cockpit', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'Satellites', COST : 750, MOVES : '2.0', NOTES : 'Starship component; 1 required'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'SS Engine', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'Particle Physics', COST : 750, MOVES : '2.0', NOTES : 'Starship component; 1 required'})"
+
+Neo4j on conn "CREATE (:unit { UNIT_NAME : 'SS Stasis Chamber', UNIT_TYPE : 'Civilian', UNIT_CLASS : 'Special', TECH : 'Nanotechnology', COST : 750, MOVES : '2.0', NOTES : 'Starship component; 1 required'})"
+
