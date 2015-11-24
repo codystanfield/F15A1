@@ -1,47 +1,256 @@
+-- Turn constraints off
+BEGIN
+  FOR c IN
+  (SELECT c.owner, c.table_name, c.constraint_name
+   FROM user_constraints c, user_tables t
+   WHERE c.table_name = t.table_name
+   AND c.status = 'ENABLED'
+   ORDER BY c.constraint_type DESC)
+  LOOP
+    dbms_utility.exec_ddl_statement('alter table "' || c.owner || '"."' || c.table_name || '" disable constraint ' || c.constraint_name);
+  END LOOP;
+END;
+/
+
+-- ALTER TABLE F15A1_Auth DISABLE CONSTRAINT F15A1_Auth_PK;
+-- ALTER TABLE F15A1_Comment DISABLE CONSTRAINT F15A1_Comment_PK;
+-- ALTER TABLE F15A1_Hist DISABLE CONSTRAINT F15A1_Hist_PK;
+-- ALTER TABLE F15A1_Lab DISABLE CONSTRAINT F15A1_Lab_PK;
+-- ALTER TABLE F15A1_Stat_Code DISABLE CONSTRAINT F15A1_Stat_Code_PK;
+-- ALTER TABLE F15A1_Task DISABLE CONSTRAINT F15A1_Task_PK;
+-- ALTER TABLE F15A1_Contact DISABLE CONSTRAINT F15A1_Contact_PK CASCADE;
+-- ALTER TABLE F15A1_doc DISABLE CONSTRAINT F15A1_doc_PK;
+-- ALTER TABLE F15A1_emp DISABLE CONSTRAINT F15A1_emp_PK CASCADE;
+-- ALTER TABLE F15A1_rfe DISABLE CONSTRAINT F15A1_rfe_PK CASCADE;
+-- ALTER TABLE F15A1_rtc DISABLE CONSTRAINT F15A1_rtc_PK;
+-- ALTER TABLE rfe_task_relationship DISABLE CONSTRAINT rfe_task_relationship_PK CASCADE;
+-- ALTER TABLE F15A1_Comment DISABLE CONSTRAINT F15A1_Comment_F15A1_emp_FK ;
+-- ALTER TABLE F15A1_Comment DISABLE CONSTRAINT F15A1_Comment_F15A1_rfe_FK ;
+-- ALTER TABLE F15A1_Hist DISABLE CONSTRAINT F15A1_Hist_F15A1_Stat_Code_FK ;
+-- ALTER TABLE F15A1_Hist DISABLE CONSTRAINT F15A1_Hist_F15A1_emp_FK ;
+-- ALTER TABLE F15A1_Hist DISABLE CONSTRAINT F15A1_Hist_F15A1_rfe_FK ;
+-- ALTER TABLE F15A1_contact DISABLE CONSTRAINT F15A1_contact_F15A1_emp_FK ;
+-- ALTER TABLE F15A1_contact DISABLE CONSTRAINT F15A1_contact_F15A1_rfe_FK ;
+-- ALTER TABLE F15A1_contact DISABLE CONSTRAINT F15A1_contact_F15A1_rtc_FK ;
+-- ALTER TABLE F15A1_doc DISABLE CONSTRAINT F15A1_doc_F15A1_rfe_FK ;
+-- ALTER TABLE F15A1_emp DISABLE CONSTRAINT F15A1_emp_F15A1_Auth_FK ;
+-- ALTER TABLE F15A1_emp DISABLE CONSTRAINT F15A1_emp_F15A1_Lab_FK ;
+-- ALTER TABLE F15A1_rfe DISABLE CONSTRAINT F15A1_rfe_F15A1_Stat_Code_FK ;
+-- ALTER TABLE rfe_task_relationship DISABLE CONSTRAINT FK_ASS_14 ;
+-- ALTER TABLE rfe_task_relationship DISABLE CONSTRAINT FK_ASS_15 ;
+
+--Turn triggers off
 ALTER TRIGGER F15A1_Stat_Code_PK_trig DISABLE;
 ALTER TRIGGER F15A1_Task_PK_trig DISABLE;
 ALTER TRIGGER F15A1_Lab_PK_trig DISABLE;
 ALTER TRIGGER F15A1_Auth_PK_trig DISABLE;
+ALTER TRIGGER F15A1_Emp_PK_trig DISABLE;
+ALTER TRIGGER F15A1_rtc_PK_trig DISABLE;
+ALTER TRIGGER F15A1_rfe_PK_trig DISABLE;
+ALTER TRIGGER F15A1_Comment_PK_trig DISABLE;
+ALTER TRIGGER F15A1_Hist_PK_trig DISABLE;
+ALTER TRIGGER F15A1_contact_PK_trig DISABLE;
+ALTER TRIGGER F15A1_doc_PK_trig DISABLE;
+ALTER TRIGGER rfe_task_relationship_PK_trig DISABLE;
+ALTER TRIGGER F15A1_Auth_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_Comment_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_Hist_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_Lab_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_Stat_Code_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_Task_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_Contact_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_doc_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_emp_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_rfe_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_rtc_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_rtc_AUD_trig DISABLE;
+ALTER TRIGGER rfe_task_relationship_AUD_trig DISABLE;
+ALTER TRIGGER F15A1_emp_trigger DISABLE;
+ALTER TRIGGER F15A1_rfe_view_trigger DISABLE;
+ALTER TRIGGER F15A1_test DISABLE;
+ALTER TRIGGER test2 DISABLE;
+ALTER TRIGGER F15A1_doc_view_trigger DISABLE;
+ALTER TRIGGER F15A1_comment_view_trigger DISABLE;
 
-
+-- Drop data
 TRUNCATE TABLE F15A1_Comment;
 TRUNCATE TABLE rfe_task_relationship;
 TRUNCATE TABLE F15A1_doc;
 TRUNCATE TABLE F15A1_hist;
 TRUNCATE TABLE F15A1_Contact;
 TRUNCATE TABLE F15A1_emp;
-TRUNCATE TABLE F15A1_Task;
 TRUNCATE TABLE F15A1_rfe;
-TRUNCATE TABLE F15A1_Stat_Code;
 TRUNCATE TABLE F15A1_rtc;
 TRUNCATE TABLE F15A1_Lab;
 TRUNCATE TABLE F15A1_Auth;
+TRUNCATE TABLE F15A1_Task;
+TRUNCATE TABLE F15A1_Stat_Code;
 
-
-INSERT ALL
-  INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES (1, 'S1', 'Status 1')
-  INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES (2, 'S2', 'Status 2')
-  SELECT * from dual;
+-- Insert Status Codes
+INSERT INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES(1, 'Entered', 'The RFE has been created but has not yet been submitted for approval.');
+INSERT INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES(2, 'Submitted', 'The RFE has been submitted to the Lab System Administrator for approval.');
+INSERT INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES(3, 'Returned', 'The RFE has been returned for further information or clarification. Once Submitted again, it will follow the same routing as an Entered RFE.');
+INSERT INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES(4, 'Recalled', 'The requestor has recalled an RFE that has not yet reached final approval.  Once Submitted again, it will follow the same routing as an Entered RFE.');
+INSERT INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES(5, 'Rejected', 'The RFE has been rejected and cannot be implemented.');
+INSERT INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES(6, 'System Administrator Approved', 'The Lab System Administrator has approved the RFE; it has been submitted for Lab Director approval.');
+INSERT INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES(7, 'Lab Director Approved', 'The Lab Director has approved the RFE; it has been submitted for Network Security Panel approval.');
+INSERT INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES(8, 'Chairperson Approved', 'The Network Security Panel Chairperson has approved the RFE; it has been submitted for Executive Director approval.');
+INSERT INTO F15A1_Stat_Code (SC, status_text, status_description) VALUES(9, 'Final Approved', 'The Executive Director''s Office has given final approval for the RFE and it may be implemented.');
   
+-- Insert Tasks
 INSERT ALL
   INTO F15A1_Task (task_id, task_effective_date, task_abreviation, task_description) VALUES (1, TO_DATE('2015/11/01', 'yyyy/mm/dd'), 'T1', 'Task 1')
-  INTO F15A1_Task (task_id, task_effective_date, task_abreviation, task_description) VALUES (2, TO_DATE('2015/11/02', 'yyyy/mm/dd'), 'T1', 'Task 2')
+  INTO F15A1_Task (task_id, task_effective_date, task_abreviation, task_description) VALUES (2, TO_DATE('2015/11/02', 'yyyy/mm/dd'), 'T2', 'Task 2')
   SELECT * from dual;
       
+-- Insert Labs
 INSERT ALL
-  INTO F15A1_Lab (lab_id, lab_name) VALUES(1, 'Lab 1')
-  INTO F15A1_Lab (lab_id, lab_name) VALUES(2, 'Lab 2')
+  INTO F15A1_Lab (lab_id, lab_name) VALUES (1, 'Lab 1')
+  INTO F15A1_Lab (lab_id, lab_name) VALUES (2, 'Lab 2')
   SELECT * from dual;
 
+-- Insert Authentication
 INSERT ALL
-  INTO F15A1_Auth (auth_id, right) VALUES(1, 'All')
-  INTO F15A1_Auth (auth_id, right) VALUES(2, 'None')
+  INTO F15A1_Auth (auth_id, right) VALUES (1, 'All')
+  INTO F15A1_Auth (auth_id, right) VALUES (2, 'None')
   SELECT * from dual;
 
+-- Insert Employees
+INSERT INTO F15A1_Emp (emp_id, F15A1_Lab_lab_id, emp_name, emp_email, emp_office, emp_status, F15A1_Auth_auth_id, emp_labdir_flag, emp_chair_flag, emp_execdir_flag, emp_admin_flag)
+  VALUES (1, 1, 'Cody', 'cody@utexas.edu', 'CS 1.100', 'A', 2, '0', '0', '0', '0');
+INSERT INTO F15A1_Emp (emp_id, F15A1_Lab_lab_id, emp_name, emp_email, emp_office, emp_status, F15A1_Auth_auth_id, emp_labdir_flag, emp_chair_flag, emp_execdir_flag, emp_admin_flag)
+  VALUES (2, 1, 'Brett', 'brett@utexas.edu', 'CS 1.200', 'A', 1, '0', '0', '0', '0');
+INSERT INTO F15A1_Emp (emp_id, F15A1_Lab_lab_id, emp_name, emp_email, emp_office, emp_status, F15A1_Auth_auth_id, emp_labdir_flag, emp_chair_flag, emp_execdir_flag, emp_admin_flag)
+  VALUES (3, 1, 'Radu', 'radu@utexas.edu', 'CS 1.300', 'A', 1, '0', '0', '0', '0');
+INSERT INTO F15A1_Emp (emp_id, F15A1_Lab_lab_id, emp_name, emp_email, emp_office, emp_status, F15A1_Auth_auth_id, emp_labdir_flag, emp_chair_flag, emp_execdir_flag, emp_admin_flag)
+  VALUES (4, 1, 'Franke', 'franke@utexas.edu', 'CS 1.400', 'A', 2, '0', '0', '0', '1');
+INSERT INTO F15A1_Emp (emp_id, F15A1_Lab_lab_id, emp_name, emp_email, emp_office, emp_status, F15A1_Auth_auth_id, emp_labdir_flag, emp_chair_flag, emp_execdir_flag, emp_admin_flag)
+  VALUES (5, 1, 'Hunt', 'hunt@utexas.edu', 'CS 1.500', 'A', 2, '1', '0', '0', '0');
+INSERT INTO F15A1_Emp (emp_id, F15A1_Lab_lab_id, emp_name, emp_email, emp_office, emp_status, F15A1_Auth_auth_id, emp_labdir_flag, emp_chair_flag, emp_execdir_flag, emp_admin_flag)
+  VALUES (6, 1, 'Downing', 'downing@utexas.edu', 'CS 1.600', 'A', 2, '0', '1', '0', '0');
+INSERT INTO F15A1_Emp (emp_id, F15A1_Lab_lab_id, emp_name, emp_email, emp_office, emp_status, F15A1_Auth_auth_id, emp_labdir_flag, emp_chair_flag, emp_execdir_flag, emp_admin_flag)
+  VALUES (7, 1, 'Cannata', 'cannata@utexas.edu', 'CS 1.700', 'A', 2, '0', '0', '1', '0');
+INSERT INTO F15A1_Emp (emp_id, F15A1_Lab_lab_id, emp_name, emp_email, emp_office, emp_status, F15A1_Auth_auth_id, emp_labdir_flag, emp_chair_flag, emp_execdir_flag, emp_admin_flag)
+  VALUES (8, 2, 'Loser', 'loser@utexas.edu', 'CS 0.000', 'A', 1, '0', '0', '0', '0');
+INSERT INTO F15A1_Emp (emp_id, F15A1_Lab_lab_id, emp_name, emp_email, emp_office, emp_status, F15A1_Auth_auth_id, emp_labdir_flag, emp_chair_flag, emp_execdir_flag, emp_admin_flag)
+  VALUES (9, 2, 'Dweeb', 'dweeb@utexas.edu', 'CS -0.000', 'A', 1, '0', '0', '0', '0');
 
+-- Insert Role Type Codes
+INSERT INTO F15A1_rtc (role_code_id, role_type, role_description) VALUES (1, 'Requestor', 'The employee who created the RFE');
+INSERT INTO F15A1_rtc (role_code_id, role_type, role_description) VALUES (2, 'FYI Reviewer', 'An employee with peripheral interests; will get automatically notified at certain stages');
+INSERT INTO F15A1_rtc (role_code_id, role_type, role_description) VALUES (3, 'Sys Admin Approver', 'First round approver for new RFE''s in their lab');
+INSERT INTO F15A1_rtc (role_code_id, role_type, role_description) VALUES (4, 'Lab Director Approver', 'Second round approver for new RFE''s in their lab');
+INSERT INTO F15A1_rtc (role_code_id, role_type, role_description) VALUES (5, 'Chairperson Approver', 'Network Security Panel approver');
+INSERT INTO F15A1_rtc (role_code_id, role_type, role_description) VALUES (6, 'Exec Dir Approver', 'Final round approver for all RFE''s');
 
+-- Insert RFEs
+INSERT INTO F15A1_rfe (rfe_id, F15A1_Stat_Code_SC, rfe_explanation, rfe_alt_protections, rfe_approval_review_date)
+  VALUES(101, 1, 'Sample explanation 1', 'Sample Alt Protections 1', TO_DATE('2015/12/01', 'yyyy/mm/dd'));
+-- INSERT INTO F15A1_rfe (rfe_id, F15A1_Stat_Code_SC, rfe_explanation, rfe_alt_protections, rfe_approval_review_date)
+--   VALUES(2, 2, 'Sample explanation 2', 'Sample Alt Protections 2', TO_DATE('2015/12/02', 'yyyy/mm/dd'));
+--   
+-- -- Insert Contact Info
+INSERT INTO F15A1_contact (contact_id, F15A1_emp_emp_id, F15A1_rfe_rfe_id, contact_effective_date, contact_comment, F15A1_rtc_role_code_id)
+  VALUES(1, 1, 101, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 'sample contact comment', 1);
+INSERT INTO F15A1_contact (contact_id, F15A1_emp_emp_id, F15A1_rfe_rfe_id, contact_effective_date, contact_comment, F15A1_rtc_role_code_id)
+  VALUES(2, 4, 101, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 'sample contact comment', 3);
+INSERT INTO F15A1_contact (contact_id, F15A1_emp_emp_id, F15A1_rfe_rfe_id, contact_effective_date, contact_comment, F15A1_rtc_role_code_id)
+  VALUES(3, 5, 101, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 'sample contact comment', 4);
+INSERT INTO F15A1_contact (contact_id, F15A1_emp_emp_id, F15A1_rfe_rfe_id, contact_effective_date, contact_comment, F15A1_rtc_role_code_id)
+  VALUES(4, 6, 101, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 'sample contact comment', 5);
+INSERT INTO F15A1_contact (contact_id, F15A1_emp_emp_id, F15A1_rfe_rfe_id, contact_effective_date, contact_comment, F15A1_rtc_role_code_id)
+  VALUES(5, 7, 101, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 'sample contact comment', 6);
+-- INSERT INTO F15A1_contact (contact_id, F15A1_emp_emp_id, F15A1_rfe_rfe_id, contact_effective_date, contact_comment, F15A1_rtc_role_code_id)
+--   VALUES(6, 2, 2, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 'sample contact comment', 1);
+-- INSERT INTO F15A1_contact (contact_id, F15A1_emp_emp_id, F15A1_rfe_rfe_id, contact_effective_date, contact_comment, F15A1_rtc_role_code_id)
+--   VALUES(7, 4, 2, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 'sample contact comment', 3);
+-- INSERT INTO F15A1_contact (contact_id, F15A1_emp_emp_id, F15A1_rfe_rfe_id, contact_effective_date, contact_comment, F15A1_rtc_role_code_id)
+--   VALUES(8, 5, 2, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 'sample contact comment', 4);
+-- INSERT INTO F15A1_contact (contact_id, F15A1_emp_emp_id, F15A1_rfe_rfe_id, contact_effective_date, contact_comment, F15A1_rtc_role_code_id)
+--   VALUES(9, 6, 2, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 'sample contact comment', 5);
+-- INSERT INTO F15A1_contact (contact_id, F15A1_emp_emp_id, F15A1_rfe_rfe_id, contact_effective_date, contact_comment, F15A1_rtc_role_code_id)
+--   VALUES(10, 7, 2, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 'sample contact comment', 6);
+-- 
+-- -- Insert into rfe_task_relationship
+INSERT INTO rfe_task_relationship (token_pk, F15A1_rfe_rfe_id, F15A1_Task_task_id)
+  VALUES (1, 101, 1);
+-- INSERT INTO rfe_task_relationship (token_pk, F15A1_rfe_rfe_id, F15A1_Task_task_id)
+--   VALUES (2, 2, 2);
 
+-- Insert into History
+INSERT INTO F15A1_hist (hist_id, F15A1_rfe_rfe_id, F15A1_Stat_Code_SC, history_effective_date, F15A1_emp_emp_id)
+  VALUES (1, 101, 1, TO_DATE('2015/12/01', 'yyyy/mm/dd'), 1);
+
+-- Turn triggers on
 ALTER TRIGGER F15A1_Stat_Code_PK_trig ENABLE;
 ALTER TRIGGER F15A1_Task_PK_trig ENABLE;
 ALTER TRIGGER F15A1_Lab_PK_trig ENABLE;
 ALTER TRIGGER F15A1_Auth_PK_trig ENABLE;
+ALTER TRIGGER F15A1_Emp_PK_trig ENABLE;
+ALTER TRIGGER F15A1_rtc_PK_trig ENABLE;
+ALTER TRIGGER F15A1_rfe_PK_trig ENABLE;
+ALTER TRIGGER F15A1_Comment_PK_trig ENABLE;
+ALTER TRIGGER F15A1_Hist_PK_trig ENABLE;
+ALTER TRIGGER F15A1_contact_PK_trig ENABLE;
+ALTER TRIGGER F15A1_doc_PK_trig ENABLE;
+ALTER TRIGGER rfe_task_relationship_PK_trig ENABLE;
+ALTER TRIGGER F15A1_Auth_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_Comment_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_Hist_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_Lab_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_Stat_Code_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_Task_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_Contact_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_doc_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_emp_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_rfe_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_rtc_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_rtc_AUD_trig ENABLE;
+ALTER TRIGGER rfe_task_relationship_AUD_trig ENABLE;
+ALTER TRIGGER F15A1_emp_trigger ENABLE;
+ALTER TRIGGER F15A1_rfe_view_trigger ENABLE;
+ALTER TRIGGER F15A1_test ENABLE;
+ALTER TRIGGER test2 ENABLE;
+ALTER TRIGGER F15A1_doc_view_trigger ENABLE;
+ALTER TRIGGER F15A1_comment_view_trigger ENABLE;
+
+-- Turn constraints on
+BEGIN
+  FOR c IN
+  (SELECT c.owner, c.table_name, c.constraint_name
+   FROM user_constraints c, user_tables t
+   WHERE c.table_name = t.table_name
+   AND c.status = 'DISABLED'
+   ORDER BY c.constraint_type)
+  LOOP
+    dbms_utility.exec_ddl_statement('alter table "' || c.owner || '"."' || c.table_name || '" enable constraint ' || c.constraint_name);
+  END LOOP;
+END;
+/
+
+-- ALTER TABLE F15A1_Auth ENABLE CONSTRAINT F15A1_Auth_PK;
+-- ALTER TABLE F15A1_Comment ENABLE CONSTRAINT F15A1_Comment_PK;
+-- ALTER TABLE F15A1_Hist ENABLE CONSTRAINT F15A1_Hist_PK;
+-- ALTER TABLE F15A1_Lab ENABLE CONSTRAINT F15A1_Lab_PK;
+-- ALTER TABLE F15A1_Stat_Code ENABLE CONSTRAINT F15A1_Stat_Code_PK;
+-- ALTER TABLE F15A1_Task ENABLE CONSTRAINT F15A1_Task_PK;
+-- ALTER TABLE F15A1_Contact ENABLE CONSTRAINT F15A1_Contact_PK;
+-- ALTER TABLE F15A1_doc ENABLE CONSTRAINT F15A1_doc_PK;
+-- ALTER TABLE F15A1_emp ENABLE CONSTRAINT F15A1_emp_PK;
+-- ALTER TABLE F15A1_rfe ENABLE CONSTRAINT F15A1_rfe_PK;
+-- ALTER TABLE F15A1_rtc ENABLE CONSTRAINT F15A1_rtc_PK;
+-- ALTER TABLE rfe_task_relationship ENABLE CONSTRAINT rfe_task_relationship_PK;
+-- ALTER TABLE F15A1_Comment ENABLE CONSTRAINT F15A1_Comment_F15A1_emp_FK ;
+-- ALTER TABLE F15A1_Comment ENABLE CONSTRAINT F15A1_Comment_F15A1_rfe_FK ;
+-- ALTER TABLE F15A1_Hist ENABLE CONSTRAINT F15A1_Hist_F15A1_Stat_Code_FK ;
+-- ALTER TABLE F15A1_Hist ENABLE CONSTRAINT F15A1_Hist_F15A1_emp_FK ;
+-- ALTER TABLE F15A1_Hist ENABLE CONSTRAINT F15A1_Hist_F15A1_rfe_FK ;
+-- ALTER TABLE F15A1_contact ENABLE CONSTRAINT F15A1_contact_F15A1_emp_FK ;
+-- ALTER TABLE F15A1_contact ENABLE CONSTRAINT F15A1_contact_F15A1_rfe_FK ;
+-- ALTER TABLE F15A1_contact ENABLE CONSTRAINT F15A1_contact_F15A1_rtc_FK ;
+-- ALTER TABLE F15A1_doc ENABLE CONSTRAINT F15A1_doc_F15A1_rfe_FK ;
+-- ALTER TABLE F15A1_emp ENABLE CONSTRAINT F15A1_emp_F15A1_Auth_FK ;
+-- ALTER TABLE F15A1_emp ENABLE CONSTRAINT F15A1_emp_F15A1_Lab_FK ;
+-- ALTER TABLE F15A1_rfe ENABLE CONSTRAINT F15A1_rfe_F15A1_Stat_Code_FK ;
+-- ALTER TABLE rfe_task_relationship ENABLE CONSTRAINT FK_ASS_14 ;
+-- ALTER TABLE rfe_task_relationship ENABLE CONSTRAINT FK_ASS_15 ;

@@ -70,7 +70,7 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="comment" id="CB8BC4EA-1DFD-DE8C-D5EE-4B3ED87B75C5">
+<Attribute name="comment_comment" id="CB8BC4EA-1DFD-DE8C-D5EE-4B3ED87B75C5">
 <createdBy>cody</createdBy>
 <createdTime>2015-11-12 23:25:36 UTC</createdTime>
 <ownerDesignName>F15A1 Conceptual Model</ownerDesignName>

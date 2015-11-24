@@ -61,18 +61,21 @@ SELECT
   r.rfe_approval_review_date,
   t.task_abreviation,
   t.task_id,
-  rtr.token_pk
-FROM F15A1_rfe r join F15A1_Stat_Code s on r.F15A1_Stat_Code_sc = s.SC
-  join rfe_task_relationship rtr on r.rfe_id = rtr.F15A1_rfe_rfe_id
-  join F15A1_Task t on rtr.F15A1_Task_task_id = t.task_id;
+  rtr.token_pk,
+  0 as comments,
+  0 as docs,
+  0 as hist
+FROM F15A1_rfe r left join F15A1_Stat_Code s on r.F15A1_Stat_Code_sc = s.SC
+  left join rfe_task_relationship rtr on r.rfe_id = rtr.F15A1_rfe_rfe_id
+  left join F15A1_Task t on rtr.F15A1_Task_task_id = t.task_id;
 
 create or replace TRIGGER F15A1_rfe_view_trigger
-  INSTEAD OF insert ON F15A1_rfe_view
+  INSTEAD OF insert OR UPDATE ON F15A1_rfe_view
   FOR EACH ROW
-  DECLARE
-    rid NUMBER;
+--  DECLARE
+--    rid NUMBER;
 BEGIN
-  rid := F15A1_rfe_seq.nextval;
+  --rid := F15A1_rfe_seq.nextval;
   insert into F15A1_rfe(
               rfe_id,
               F15A1_Stat_Code_sc,
@@ -80,10 +83,11 @@ BEGIN
               rfe_alt_protections,
               rfe_approval_review_date)
               VALUES(
-              --:NEW.rfe_id,
-              rid,
+              :NEW.rfe_id,
+--              rid,
               --:NEW.F15A1_Stat_Code_SC,
-              nv('P21_STATUS_TEXT'),
+              --nv('P21_STATUS_TEXT'),
+              1,
               :NEW.rfe_explanation,
               :NEW.rfe_alt_protections,
               :NEW.rfe_approval_review_date);
@@ -109,22 +113,195 @@ BEGIN
               F15A1_rfe_rfe_id,
               F15A1_Task_task_id)
               VALUES(
-              1  -- Won't actually set 1, other trigger will put in correct new primary key
+              1,  -- Won't actually set 1, other trigger will put in correct new primary key
               :NEW.rfe_id,
-              nv('P21_TASK_ABREVIATION'));
+              --nv('P21_TASK_ABREVIATION'));
+              nv('P35_TASK_ID'));
   insert into F15A1_contact(
-              contact_id)
-              --F15A1_emp_emp_id,
-              --F15A1_rfe_rfe_id,
-              --contact_effective_date,
-              --contact_comment,
-              --F15A1_rtc_role_code_id)
+              contact_id,
+              F15A1_emp_emp_id,
+              F15A1_rfe_rfe_id,
+              contact_effective_date,
+              contact_comment,
+              F15A1_rtc_role_code_id)
               VALUES(
+              1,
+              nv('P1_EMPLOYEE'),
+              :NEW.rfe_id,
+              SYSDATE(),
+              'Requester',
               1);
-              --:P1_EMPLOYEE,
-              --:NEW.rfe_id,
-              --SYSDATE(),
-              --'Requester',
-              --100);
+  insert into F15A1_contact(
+              contact_id,
+              F15A1_emp_emp_id,
+              F15A1_rfe_rfe_id,
+              contact_effective_date,
+              contact_comment,
+              F15A1_rtc_role_code_id)
+              VALUES(
+              1,
+              (select emp_id from F15A1_emp where emp_admin_flag = '1' and F15A1_Lab_lab_id = (select F15A1_Lab_lab_id from F15A1_emp where emp_id = nv('P1_EMPLOYEE'))),
+              :NEW.rfe_id,
+              SYSDATE(),
+              'SA Approver',
+              3);
+  insert into F15A1_contact(
+              contact_id,
+              F15A1_emp_emp_id,
+              F15A1_rfe_rfe_id,
+              contact_effective_date,
+              contact_comment,
+              F15A1_rtc_role_code_id)
+              VALUES(
+              1,
+              (select emp_id from F15A1_emp where emp_labdir_flag = '1' and F15A1_Lab_lab_id = (select F15A1_Lab_lab_id from F15A1_emp where emp_id = nv('P1_EMPLOYEE'))),
+              :NEW.rfe_id,
+              SYSDATE(),
+              'LD Approver',
+              4);
+  insert into F15A1_contact(
+              contact_id,
+              F15A1_emp_emp_id,
+              F15A1_rfe_rfe_id,
+              contact_effective_date,
+              contact_comment,
+              F15A1_rtc_role_code_id)
+              VALUES(
+              1,
+              (select emp_id from F15A1_emp where emp_chair_flag = '1'),
+              :NEW.rfe_id,
+              SYSDATE(),
+              'CH Approver',
+              5);
+  insert into F15A1_contact(
+              contact_id,
+              F15A1_emp_emp_id,
+              F15A1_rfe_rfe_id,
+              contact_effective_date,
+              contact_comment,
+              F15A1_rtc_role_code_id)
+              VALUES(
+              1,
+              (select emp_id from F15A1_emp where emp_execdir_flag = '1'),
+              :NEW.rfe_id,
+              SYSDATE(),
+              'ED Approver',
+              6);
+  insert into F15A1_Hist(
+              hist_id,
+              F15A1_rfe_rfe_id,
+              F15A1_Stat_Code_SC,
+              history_effective_date,
+              F15A1_emp_emp_id)
+              VALUES(
+              1,
+              :NEW.rfe_id,
+              :NEW.F15A1_Stat_Code_SC,
+              SYSDATE(),
+              nv('P1_EMPLOYEE'));
 END;
 /
+
+create or replace trigger test2
+  after update on f15a1_rfe
+  for each row
+BEGIN
+insert into F15A1_Hist(
+            hist_id,
+            F15A1_rfe_rfe_id,
+            F15A1_Stat_Code_SC,
+            history_effective_date,
+            F15A1_emp_emp_id)
+            VALUES(
+            1,
+            :NEW.rfe_id,
+            :NEW.F15A1_Stat_Code_SC,
+            SYSDATE(),
+            nv('P1_EMPLOYEE'));
+END;
+/
+
+drop view F15A1_doc_view;
+
+create view F15A1_doc_view as
+SELECT
+  doc_id,
+  F15A1_rfe_rfe_id,
+  filename,
+  file_mimetype,
+  file_charset,
+  file_blob,
+  file_comments,
+  tags
+FROM F15A1_doc;
+
+create or replace TRIGGER F15A1_doc_view_trigger
+  INSTEAD OF insert ON F15A1_doc_view
+  FOR EACH ROW
+BEGIN
+  insert into F15A1_doc(
+              doc_id,
+              F15A1_rfe_rfe_id,
+              filename,
+              file_mimetype,
+              file_charset,
+              file_blob,
+              file_comments,
+              tags)
+              VALUES(
+              :NEW.doc_id,
+              :NEW.F15A1_rfe_rfe_id,
+              :NEW.filename,
+              :NEW.file_mimetype,
+              :NEW.file_charset,
+              :NEW.file_blob,
+              :NEW.file_comments,
+              :NEW.tags);
+END;
+/
+
+drop view F15A1_Comment_view;
+
+create view F15A1_Comment_view as
+SELECT 
+  c.comment_id,
+  c.F15A1_rfe_rfe_id,
+  c.F15A1_emp_emp_id,
+  e.emp_name,
+  c.comment_entry_date,
+  c.comment_comment
+FROM F15A1_Comment c left join F15A1_emp e on c.F15A1_emp_emp_id = e.emp_id;
+
+create or replace TRIGGER F15A1_Comment_view_trigger
+  INSTEAD OF insert ON F15A1_Comment_view
+  FOR EACH ROW
+BEGIN
+  insert into F15A1_Comment(
+              comment_id,
+              F15A1_rfe_rfe_id,
+              F15A1_emp_emp_id,
+              comment_entry_date,
+              comment_comment)
+              VALUES(
+              :NEW.comment_id,
+              :NEW.F15A1_rfe_rfe_id,
+              nv('P1_EMPLOYEE'),
+              SYSDATE(),
+              :NEW.comment_comment);
+END;
+/
+
+drop view F15A1_Hist_view;
+
+create view F15A1_Hist_view as
+SELECT
+  h.hist_id,
+  h.F15A1_rfe_rfe_id,
+  h.F15A1_Stat_Code_SC,
+  h.history_effective_date,
+  h.F15A1_emp_emp_id,
+  --h.created,
+  s.status_text,
+  e.emp_name
+FROM F15A1_Hist h left join F15A1_Stat_Code s on h.F15A1_Stat_Code_SC = s.SC
+  left join F15A1_emp e on h.F15A1_emp_emp_id = e.emp_id;
